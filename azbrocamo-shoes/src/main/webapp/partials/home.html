@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    JBoss, Home of Professional Open Source
+    Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
+    contributors by the @authors tag. See the copyright.txt in the
+    distribution for a full listing of individual contributors.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<!-- This is a partial, and is templated by AngularJS -->
+<div>
+    <h1>Sprint 1: Affichage des modeles</h1>
+
+  
+
+   
+    <!-- A list of registered members -->
+    <h2>Modeles</h2>
+    <!-- If there are no members registered, instead of showing the table, we show a simple message. -->
+    <em ng-show="modeles.length == 0">No registered modeles.</em>
+    <table ng-hide="modeles.length == 0" class="simpletablestyle">
+        <thead>
+            <tr>
+                <th>nom du modele</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <!-- The table is built using the AngularJS repeat function, iterating over the members variable, and ordering by the property specified in the orderBy variable -->
+        <tr ng-repeat="modele in modeles | orderBy:orderBy">
+            <td>{{modele.nomModele}}</td>
+            <td>{{modele.note}}</td>
+    </table>
+    <div>
+        <!-- The table has a button to manually refresh the values, in case, for example, someone else adds a member -->
+        <input type="button" ng-click="refresh()" name="refresh"
+            id="refresh" value="Refresh" />
+    </div>
+</div>
