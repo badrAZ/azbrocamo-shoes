@@ -19,4 +19,7 @@
 -- Use only for a proof of concept
 
 -- You can use this file to load seed data into the database using SQL statements
-insert into Modele (nomModele, note) values ('A200',20); 
+insert into Modele (nomModele, note,prix,photo,description) values ('A200',20,5.2,"ok","des"); 
+insert into Modele (nomModele, note,prix,photo,description) values ('A400',30,45.2,"ko","desc"); 
+insert into Modele (nomModele, note,prix,photo,description) values ('A300',20,5.2,"ok","desc"); 
+insert into Modele (nomModele, note,prix,photo,description) values ('A800',20,5.2,"ok","desc"); 

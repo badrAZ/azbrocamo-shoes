@@ -26,7 +26,6 @@
       <!-- The datasource is deployed as WEB-INF/kitchensink-quickstart-ds.xml, you
          can find it in the source at src/main/webapp/WEB-INF/kitchensink-quickstart-ds.xml -->
       <jta-data-source>java:jboss/datasources/ShoesDS</jta-data-source>
-      <class>edu.m2pgi.azbrocamo.shoes.model.Modele</class>
       <properties>
          <property name="hibernate.hbm2ddl.auto" value="create-drop" />
          <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
