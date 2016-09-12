@@ -31,12 +31,18 @@
             <tr>
                 <th>nom du modele</th>
                 <th>Note</th>
+                <th>Prix</th>
+                <th>Photo</th>
+                <th>Description</th>
             </tr>
         </thead>
         <!-- The table is built using the AngularJS repeat function, iterating over the members variable, and ordering by the property specified in the orderBy variable -->
         <tr ng-repeat="modele in modeles | orderBy:orderBy">
             <td>{{modele.nomModele}}</td>
             <td>{{modele.note}}</td>
+            <td>{{modele.prix}}</td>
+            <td>{{modele.photo}}</td>
+            <td>{{modele.description}}</td>
     </table>
     <div>
         <!-- The table has a button to manually refresh the values, in case, for example, someone else adds a member -->
