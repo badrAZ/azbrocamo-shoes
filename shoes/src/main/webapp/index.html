@@ -15,13 +15,14 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<html lang="en" ng-app="kitchensink">
+<html lang="en" >
 <head>
-    <title>Im2ag shoes</title>
+    <title>Azbrocamo</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- Disable phone number detection on iOS.  -->
     <meta name="format-detection" content="telephone=no" />
 
+	<link rel="stylesheet" href="css/angular-material.min.css" type="text/css"/>
     <link rel="stylesheet" href="css/screen.css" type="text/css" />
     
     <!-- Load angularjs -->
@@ -30,6 +31,13 @@
     <script src="js/libs/angular-route.js"></script>
     <!-- Load angularjs-resource, which allows us to interact with REST resources as high level services -->
     <script src="js/libs/angular-resource.js"></script>
+    <!-- Load angularjs-animate (ngMaterial dep.) -->
+    <script src="js/libs/angular-animate.js"></script>
+    <!-- Load angularjs-aria (ngMaterial dep.) -->
+    <script src="js/libs/angular-aria.js"></script>
+    <!--  Load angular material design library -->
+    <script src="js/libs/angular-material.js"></script>
+    
     
     <!-- Load the controllers for our app -->
     <script src="js/controllers.js"></script>
@@ -41,7 +49,7 @@
     <script src="js/services.js"></script>
     
 </head>
-<body>
+<body ng-app="kitchensink">
     <aside id="container">
         <div id="content" ng-view>
             <!-- This div will be templated by AngularJS -->
