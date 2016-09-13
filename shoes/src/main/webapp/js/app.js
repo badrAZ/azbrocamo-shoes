@@ -16,7 +16,7 @@
  */
 // Define any routes for the app
 // Note that this app is a single page app, and each partial is routed to using the URL fragment. For example, to select the 'home' route, the URL is http://localhost:8080/jboss-as-kitchensink-angularjs/#/home
-angular.module('kitchensink', ['ngRoute','modelesService','ngAnimate','ngAria','ngMaterial']).config(
+angular.module('azbrocamo', ['ngRoute','modelesService','ngAnimate','ngAria','ngMaterial']).config(
         [ '$httpProvider', '$routeProvider', function($httpProvider, $routeProvider) {
         	
         	
@@ -34,9 +34,9 @@ angular.module('kitchensink', ['ngRoute','modelesService','ngAnimate','ngAria','
             // Add a default route
             }).otherwise({
                 redirectTo : '/home'
-            }).when('/Description',{
-            	templateUrl : 'partials/Description.html',
-                controller : DescriptionCtrl
+            }).when('/description',{
+            	templateUrl : 'partials/description.html',
+                controller : descriptionCtrl
             });
         } ])
     .factory('ajaxNonceInterceptor', function() {

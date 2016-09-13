@@ -80,7 +80,7 @@ function ModelesCtrl($scope, $http, Modeles) {
     // Set the default orderBy to the name property
     $scope.orderBy = 'nomModele';
 }
-function DescriptionCtrl($scope, $http, Modeles) {
+function descriptionCtrl($scope, $http, Modeles) {
 	$scope.model={};
 	$scope.model.details={
 			"id":1
