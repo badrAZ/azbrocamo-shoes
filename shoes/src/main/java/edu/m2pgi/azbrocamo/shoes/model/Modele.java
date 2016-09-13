@@ -55,7 +55,8 @@ public class Modele implements Serializable {
 
 	public void setPhoto(String photo) {
 		this.photo = photo;
-	}   
+	}
+	
 	public String getDescription() {
 		return this.description;
 	}
