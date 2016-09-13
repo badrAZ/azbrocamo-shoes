@@ -31,7 +31,7 @@ body {
   border-left: 5px solid #8c8f91;
   border-right: 5px solid #8c8f91;
   border-bottom: 25px solid #8c8f91;
-  width: 1800px; /* subtract 40px from banner width for padding */
+  width: 865px; /* subtract 40px from banner width for padding */
   background: #FFFFFF;
   background-image: url(../gfx/headerbkg.png);
   background-repeat: repeat-x;
@@ -71,7 +71,40 @@ body {
 code {
   font-size: 1.1em;
 }
-
+a {
+  color: #4a5d75;
+  text-decoration: none;
+}
+a:hover {
+  color: #369;
+  text-decoration: underline;
+}
+h1 {
+  color:#243446;
+  font-size: 2.25em;
+}
+h2 {
+  font-size: 1em;
+}
+h3 {
+  color:#243446;
+}
+h4 {
+}
+h5 {
+}
+h6 {
+}
+/* Member registration styles */
+span.error {
+  padding-left: 3px;
+  color: red;
+}
+ul.success {
+    list-style: none;
+    padding-left: 3px;
+    color: green;
+}
 form {
   padding: 1em;
   font: 80%/1 sans-serif;
@@ -91,7 +124,10 @@ label {
 input {
   margin-bottom: 8px;
 }
-
+.register {
+  float: left;
+  margin-left: 85px;
+}
 
 /*  -----  table style  -------  */
 
@@ -110,9 +146,9 @@ input {
 
 .simpletablestyle td {
   height:2em;
-  padding-left: 50px;
+  padding-left: 6px;
   font-size:11px;
-  padding:40px 40px;
+  padding:5px 5px;
 }
 
 .simpletablestyle th {
@@ -168,17 +204,4 @@ input {
 .simpletablestyle td a:hover {
   color:#3883ce;
   text-decoration:none; 
-}
-#im{
-	width:120px;
-	height:150px;	
-}
-#nomM{
-	color:#171717;
-	font-size:20px;
-}
-
-#prix{
-	color: #171717;
-	font-size:15px;
 }
