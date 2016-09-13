@@ -28,7 +28,7 @@
       
         <!-- The table is built using the AngularJS repeat function, iterating over the members variable, and ordering by the property specified in the orderBy variable -->
         
-            <td ng-repeat="modele in modeles | orderBy:orderBy" ng-click="go('/Description')")>
+            <td ng-repeat="modele in modeles | orderBy:orderBy" ng-click="go('/Description')">
             <img id="im"src="{{modele.photo}}"/>
             <span id="nomM">{{modele.nomModele}}</span>
             <br/><span id="prix">{{modele.prix}} Euro</span></center>

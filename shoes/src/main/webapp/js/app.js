@@ -37,8 +37,6 @@ angular.module('kitchensink', ['ngRoute','modelesService']).config(
             }).when('/Description',{
             	templateUrl : 'partials/Description.html',
                 controller : DescriptionCtrl
-            }).otherwise({
-                redirectTo : '/Description'
             });
         } ])
     .factory('ajaxNonceInterceptor', function() {
