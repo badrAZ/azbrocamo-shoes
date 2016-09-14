@@ -48,13 +48,14 @@ public class ModeleResourceRestService {
 	    }
 
 	    @GET
-	    @Path("/{nomModele:[0-9][0-9]*}")
+	    @Path("/{nomModele}")
 	    @Produces(MediaType.APPLICATION_JSON)
 	    public Modele lookupModeleByName(@PathParam("nomModele") String nomModele) {
 	        Modele modele = repository.findByName(nomModele);
 	        if (modele == null) {
 	            throw new WebApplicationException(Response.Status.NOT_FOUND);
 	        }
+	        System.out.println("ok");
 	        return modele;
 	    }
 

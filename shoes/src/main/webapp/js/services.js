@@ -17,5 +17,5 @@
 // Define the REST resource service, allowing us to interact with it as a high level service
 angular.module('modelesService', ['ngResource']).
     factory('Modeles', function($resource){
-  return $resource('rest/modeles/:modeleName', {});
+  return $resource('rest/modeles/:nomModele', {});
 });

@@ -81,9 +81,6 @@ function ModelesCtrl($scope, $http, Modeles) {
     $scope.orderBy = 'nomModele';
 }
 function descriptionCtrl($scope, $http, Modeles) {
-	$scope.model={};
-	$scope.model.details={
-			"id":1
-	};
+		
 }
 
