@@ -7,9 +7,6 @@ body {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 0.8em;
   color:#363636;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 50px;
   min-width: 800px;
 }
 
@@ -87,64 +84,6 @@ input {
 
 /*  = Simple Table style (black header, grey/white stripes  */
 
-.simpletablestyle {
-  background-color:#E6E7E8;
-  clear:both;
-  width: 550px;
-}
-
-.simpletablestyle img {
-  border:0px;
-}
-
-.simpletablestyle td {
-  height:2em;
-  padding-left: 50px;
-  font-size:11px;
-  padding:40px 40px;
-}
-
-.simpletablestyle th {
-	background: url(../gfx/bkg-blkheader.png) black repeat-x top left;
-  font-size:12px;
-  font-weight:normal;
-  padding:0 10px 0 5px;
-  border-bottom:#999999 dotted 1px;
-}
-
-.simpletablestyle thead {
-  background: url(../gfx/bkg-blkheader.png) black repeat-x top left;
-  height:31px;
-  font-size:10px;
-  font-weight:bold;
-  color:#FFFFFF;
-  text-align:left;
-}
-
-.simpletablestyle .header a {
-  color:#94aebd;
-}
-
-.simpletablestype tfoot {
-	height: 20px;
-  font-size: 10px;
-  font-weight: bold;
-  background-color: #EAECEE;
-  text-align: center;
-}
-
-.simpletablestyle tr.header td {
-  padding: 0px 10px 0px 5px;
-}
-
-
-.simpletablestyle .subheader {
-  background-color: #e6e7e8;
-  font-size:10px;
-  font-weight:bold;
-  color:#000000;
-  text-align:left;
-}
 
 /* Using new CSS3 selectors for styling*/
 .simpletablestyle tr:nth-child(odd) {
@@ -176,6 +115,8 @@ header{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: no-wrap;
+
+	height:120px;
 }
 
 div#site_info{
@@ -183,9 +124,18 @@ div#site_info{
 	flex-direction: column;
 	flex-wrap: no-wrap;
 	max-width: 150px;
+	margin-left:20px;
+	margin-top:10px;
 }
-
-div#menus{
+ul a{
+	text-decoration:none;
+	color:#171717;
+	
+}
+ul a:hover{
+	color:#3498db;
+}
+nav{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -193,20 +143,29 @@ div#menus{
 	padding: 10px;
 	align-items: right;
 	flex-direction: right;
-	margin-top: 70px;
+	margin-top:0;
 }
 
 ul#main_menu{
-	margin-right: 10px;
+	width:1500px;
+	height:40px;
+	margin-left:20px;
+}
+section nav ul#main_menu :hover{
+	color:#2c3e50;
 }
 
-ul#user_menu{
-	margin-left: auto;
+div ul#user_menu{
+	margin-top:100px;
+	margin-left:-400px;
+
 }
 
 ul#main_menu, ul#user_menu{
-	border: 1px solid black;
+	border: 1px solid #E3E3E3;
 	padding: 2px;
+	border-radius:5px;
+	background-color:#E3E3E3;
 }
 
 ul#main_menu li, ul#user_menu li{
@@ -214,10 +173,9 @@ ul#main_menu li, ul#user_menu li{
     list-style-type:none;
     border-left: 1px solid black;
     padding: 2px;
-    margin-bottom: 4px;
-    margin-top: 4px;
     padding-left: 10px;
     padding-right: 10px;
+    font-size:20px;
 }
 
 ul#main_menu li:nth-child(1), ul#user_menu li:nth-child(1){
@@ -235,3 +193,136 @@ div#site_info p, div#site_info img, div#site_info h1{
 	margin-bottom: 0;
 	margin-top: 0;
 }
+div h2{
+	margin-left:100px;
+}
+div#navLeftHome{
+	float:left;
+	width:400px;
+	margin-top:90px;
+	border:1px solid #bdc3c7;
+	height:200px;
+	width:480px;
+	padding-top:15px;
+	padding-left:25px;
+	text-align:center;
+	
+}
+div#navLeftHome #searchBar{
+	 background-color: #eaf8fc;
+    background-image: linear-gradient(#fff, #d4e8ec);
+    border-radius: 35px;    
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c4d9df #a4c3ca #83afb7;            
+    width: 400px;
+    height: 35px;
+    padding: 10px;
+    overflow: hidden; /* Clear floats */
+}
+#search, 
+#submit {
+    float: left;
+}
+#search {
+    padding: 5px 9px;
+    height: 23px;
+    width: 250px;
+    border: 1px solid #a4c3ca;
+    font: normal 13px 'trebuchet MS', arial, helvetica;
+    background: #f1f1f1;
+    border-radius: 50px 3px 3px 50px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);            
+    outline:none;
+}
+#submit
+{       
+    background-color: #6cbb6b;
+    background-image: linear-gradient(#95d788, #6cbb6b);
+    border-radius: 3px 50px 50px 3px;    
+    border-width: 1px;
+    border-style: solid;
+    border-color: #7eba7c #578e57 #447d43;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 
+                0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    height: 35px;
+    margin: 0 0 0 10px;
+    padding: 0;
+    width: 90px;
+    cursor: pointer;
+    font: bold 14px Arial, Helvetica;
+    color: #23441e;    
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+#submit:hover {       
+    background-color: #95d788;
+    background-image: linear-gradient(#6cbb6b, #95d788);
+}   
+
+#submit:active {       
+    background: #95d788;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;        
+}
+
+#submit::-moz-focus-inner {
+       border: 0;  /* Small centering fix for Firefox */
+}
+div#navLeftHome input[type="color"]{
+	margin-top:20px;
+	
+	width:60px;
+	height:60px;
+}
+
+div#navLeftHome .triProduit{
+background-color:#e67e22;
+	height:30px;
+	border-radius:5px;
+	outline:none;
+	color:#fff;
+	font-family:"exo";
+	font-size:16px;
+	
+	}
+	
+	
+	/*-------------- liste produit --------*/
+	#listProduit{
+	float:right;
+	margin-right:-1250px;
+	margin-top:80px;
+	}
+	.simpletablestyle {
+  background-color:#E6E7E8;
+  width: 550px;
+}
+
+.simpletablestyle img {
+  border:0px;
+}
+
+.simpletablestyle td {
+  height:2em;
+  padding-left: 50px;
+  font-size:11px;
+  padding:40px 40px;
+}
+
+.simpletablestyle th {
+	background: url(../gfx/bkg-blkheader.png) black repeat-x top left;
+  font-size:12px;
+  font-weight:normal;
+  padding:0 10px 0 5px;
+  border-bottom:#999999 dotted 1px;
+}
+
+
+
+
+.simpletablestyle tr.header td {
+  padding: 0px 10px 0px 5px;
+}
+
+
