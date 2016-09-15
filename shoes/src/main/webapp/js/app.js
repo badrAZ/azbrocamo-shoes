@@ -43,6 +43,9 @@ angular.module('azbrocamo', ['ngRoute','modelesService','ngAnimate','ngAria','ng
             }).when('/register', {
             	templateUrl : 'partials/register.html',
             	controller : RegisterCtrl
+            }).when('/cart', {
+            	templateUrl : 'partials/panier.html',
+            	controller : RegisterCtrl
             });
         } ])
     .factory('ajaxNonceInterceptor', function() {

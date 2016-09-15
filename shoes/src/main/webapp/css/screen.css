@@ -328,3 +328,63 @@ div#navLeftHome .triProduit{
   padding: 0px 10px 0px 5px;
 }
 
+/*------ panier/commande --------------------*/
+
+.btntab{
+height : 50px;
+width : 50px;
+}
+.button{
+height : 250px;
+width : 250px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+.btnlign{
+text-align:center;
+}
+
+.addrprix{
+width : 80%;
+}
+.addrcom textarea {
+resize: none;
+}
+.inline { 
+float:left;
+margin : 30px;
+ }
+ .inline p{
+ float:left;
+ }
+  .inline strong{
+ float:left;
+ }
+
+.prixcom {
+float:right;
+width : 30%;
+}
+
+.com {
+border : 1px solid black; 
+width : 80%;
+height : 40%
+}
+.com .button{
+float : right;
+display : block;
+width : 60px;
+height:60px;
+
+}
+.addrcom={
+float : left;
+
+}
