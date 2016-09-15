@@ -1,3 +1,49 @@
-<div class="md-padding" >
-  <p> {{ nomModele }}  </p>
-  </div>
+<div style="display: flex" id="productDesc">
+	<div class="productOptions" style="width: 200px;">
+		<label for="size">Taille:</label>
+		<select name="size">
+			  <option>36</option>
+			  <option>36.5</option>
+			  <option>37</option>
+			  <option>37.5</option>
+			  <option>38</option>
+			  <option>38.5</option>
+			  <option>39</option>
+			  <option>39.5</option>
+			  <option>40</option>
+			  <option>40.5</option>
+			  <option>41</option>
+			  <option>41.5</option>
+			  <option>42</option>
+			  <option>42.5</option>
+			  <option>43</option>
+			  <option>43.5</option>
+			  <option>44</option>
+			  <option>44.5</option>
+			  <option>45</option>
+			  <option>45.5</option>
+			  <option>46</option>
+		</select> 
+		
+		<div id="colorChooser">
+			<label for="colors">Couleur:</label>
+		 	<select name="colors">
+			  <option value="Bleu" style="background-color: lightblue">Bleu</option>
+			  <option value="Orange" style="background-color: orange">Orange</option>
+			  <option value="Vert" style="background-color: lightgreen">Vert</option>
+			  <option value="Marron" style="background-color: brown; color: white">Marron</option>
+			  <option value="Noir" style="background-color: black; color: white">Noir</option>
+			</select> 
+		</div>
+		
+	</div>
+	<div>
+		<div class="productPhoto" style="width: 100%">
+			<img style="width: 300px" src="{{modele.photo}}" alt="Photo du produit">
+		</div>
+		<div class="productText" style="width: 100%">
+			<h2 style="margin: 0">Description du produit : </h2>
+			<p>{{modele.description}}</p>
+		</div>
+	</div>
+</div>

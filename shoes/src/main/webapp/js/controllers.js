@@ -14,6 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+
+
 function ModelesCtrl($scope, $http, Modeles,$location) {
 
     // Define a refresh function, that updates the data from the REST service
@@ -45,31 +48,6 @@ function ModelesCtrl($scope, $http, Modeles,$location) {
         $scope.clearMessages();
     };
 
-    // Define a register function, which adds the Modele using the REST service,
-    // and displays any error messages
-    $scope.register = function() {
-        $scope.clearMessages();
-
-        Modeles.save($scope.newModele, function(data) {
-
-            // Update the list of Modeles
-            $scope.refresh();
-
-            // Clear the form
-            $scope.reset();
-
-            // mark success on the registration form
-            $scope.successMessages = [ 'Modele Registered' ];
-        }, function(result) {
-            if ((result.status == 409) || (result.status == 400)) {
-                $scope.errors = result.data;
-            } else {
-                $scope.errorMessages = [ 'Unknown  server error' ];
-            }
-        });
-
-    };
-
     // Call the refresh() function, to populate the list of Modeles
     $scope.refresh();
 
@@ -79,17 +57,17 @@ function ModelesCtrl($scope, $http, Modeles,$location) {
 
     // Set the default orderBy to the name property
     $scope.orderBy = 'nomModele';
-    $scope.go=function(urlD,nomModele){
-    	console.log(nomModele);
-    	
-	}
     
 }
-function DescriptionCtrl($scope, $routeParams) {
+function DescriptionCtrl($scope, $routeParams, Modele) {
 	//$scope.dataR=angular.fromJson($scope.postObject.response);
 	//$scope.test=dataR.data;
 
 	$scope.nomModele = $routeParams.nomModele;
+	$scope.modele=Modele.get({nomModele:$routeParams.nomModele});
+	
+	console.log($scope.modele);
+	
 }
 
 function LoginCtrl($scope, $rootScope, $location, AuthenticationService){

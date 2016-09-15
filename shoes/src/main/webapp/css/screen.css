@@ -282,14 +282,13 @@ div#navLeftHome input[type="color"]{
 }
 
 div#navLeftHome .triProduit{
-background-color:#e67e22;
-height:30px;
-border-radius:5px;
-outline:none;
-color:#fff;
-font-family:"exo";
-font-size:16px;
-
+	background-color:#e67e22;
+	height:30px;
+	border-radius:5px;
+	outline:none;
+	color:#fff;
+	font-family:"exo";
+	font-size:16px;
 }
 
 

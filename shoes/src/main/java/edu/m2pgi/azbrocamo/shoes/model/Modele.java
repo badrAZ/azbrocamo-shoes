@@ -22,6 +22,7 @@ public class Modele implements Serializable {
 	private Integer note;
 	private float prix;
 	private String photo;
+	@Lob
 	private String description;
 	private static final long serialVersionUID = 1L;
 
