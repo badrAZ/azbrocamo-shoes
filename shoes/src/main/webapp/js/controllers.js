@@ -80,31 +80,39 @@ function ModelesCtrl($scope, $http, Modeles,$location) {
     // Set the default orderBy to the name property
     $scope.orderBy = 'nomModele';
     $scope.go=function(urlD,nomModele){
-    	var postObject = new Object();
-        postObject.data = "ok";
-       
-        //var s=JSON.stringify(postObject);
-
-        $http({
-            url: urlD,
-            dataType: 'json',
-            method: 'POST',
-            data: postObject,
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).success(function(response){
-            $scope.response = response;
-            
-        }).error(function(error){
-            $scope.error = error;
-        });
-        $location.path(urlD);
+    	console.log(nomModele);
+    	
 	}
     
 }
-function DescriptionCtrl($scope, $http, Modeles,$location) {
-	$scope.dataR=angular.fromJson($scope.postObject.response);
-	$scope.test=dataR.data;
+function DescriptionCtrl($scope, $routeParams) {
+	//$scope.dataR=angular.fromJson($scope.postObject.response);
+	//$scope.test=dataR.data;
+
+	$scope.nomModele = $routeParams.nomModele;
 }
 
+function LoginCtrl($scope, $rootScope, $location, AuthenticationService){
+	//RAZ creds
+	AuthenticationService.ClearCredentials();
+	
+	$scope.login = function () {
+		console.log("Username: "+$scope.username+" Password: "+$scope.password);
+        $scope.dataLoading = true;
+        AuthenticationService.Login($scope.username, $scope.password, function(response) {
+            if(response.success) {
+                AuthenticationService.SetCredentials($scope.username, $scope.password);
+                $location.path('#/home');
+            } else {
+                $scope.error = response.message;
+                $scope.dataLoading = false;
+                console.log("Error logging in: "+$scope.error);
+            }
+        });
+    };
+	
+}
+
+function RegisterCtrl($scope){
+	
+}

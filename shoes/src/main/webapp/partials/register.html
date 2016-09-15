@@ -1,0 +1,55 @@
+<form id="register">
+<h1>Créer un compte</h1>
+  <fieldset> 
+    <legend>Détails personnels</legend> 
+    <div> 
+        <label><p>Prénom</p>
+        <input id="given-name" name="given-name" placeholder="Prénom" required="" autofocus="" type="text"> 
+		</label>
+    </div>
+    <div> 
+        <label><p>Nom</p>
+        <input id="family-name" name="family-name" placeholder="Nom" required="" autofocus="" type="text"> 
+		</label>
+    </div>
+    <div> 
+        <label><p>Email</p> 
+        <input id="email" name="email" placeholder="exemple@tld.com" required="" type="email">
+		</label> 
+    </div>
+  </fieldset>
+  <fieldset> 
+    <legend>Adresse</legend> 
+    <div> 
+        <label><p>Adresse</p> 
+        <textarea id="address" name="addresse" rows="5" required=""></textarea>
+		</label> 
+    </div> 
+    <div> 
+        <label><p>Code postal</p>
+        <input id="postCode" name="postCode" required="" type="text">
+		</label> 
+    </div> 
+    <div> 
+        <label><p>Pays </p>
+        <input id="country" name="country" placeholder="France" required="" type="text">
+		</label> 
+    </div> 
+  </fieldset>
+  <fieldset>
+  	<legend>Mot de passe</legend>
+  	<div>
+  		<label><p>Mot de passe</p>
+  			<input type="password" id="password" name="password" required="">
+  		</label>
+  	</div>
+  	<div>
+  		<label><p>Confirmation de mot de passe</p>
+  			<input type="password" id="password" name="passwordConfirmation" required="">
+  		</label>
+  	</div>
+  </fieldset>
+  	<div> 
+	    <button type="submit">Valider l'inscription</button> 
+    </div> 
+</form>

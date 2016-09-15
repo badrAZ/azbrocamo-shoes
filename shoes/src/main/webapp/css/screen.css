@@ -29,7 +29,7 @@ body {
 }
 #content {
   float: left;
-  width: 500px;
+  width: 100%;
   margin: 20px;
 }
 #aside {
@@ -59,26 +59,6 @@ body {
 }
 code {
   font-size: 1.1em;
-}
-
-form {
-  padding: 1em;
-  font: 80%/1 sans-serif;
-  width: 375px;
-  border: 1px solid #D5D5D5;
-}
-label {
-  float: left;
-  width: 15%;
-  margin-left: 20px;
-  margin-right: 0.5em;
-  padding-top: 0.2em;
-  text-align: right;
-  font-weight: bold;
-  color:#363636;
-}
-input {
-  margin-bottom: 8px;
 }
 
 
@@ -234,4 +214,35 @@ div#logo img{
 div#site_info p, div#site_info img, div#site_info h1{
 	margin-bottom: 0;
 	margin-top: 0;
+}
+
+form#register, form#login{
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+form#register div, form#login div{
+	margin-bottom: 10px;
+}
+
+form#register fieldset legend, form#login fieldset legend{
+	font-weight: bold;
+}
+
+form#register fieldset div label p, form#login fieldset div label p{
+	margin: 0;
+}
+
+form#register input, form#register textarea, form#login input, form#login label, form#register label{
+	width: 90%;
+	margin-right: 10px;
+	resize: none;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
 }
