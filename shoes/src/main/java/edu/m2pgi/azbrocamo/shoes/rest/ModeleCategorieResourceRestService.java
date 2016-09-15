@@ -51,8 +51,8 @@ public class ModeleCategorieResourceRestService {
 	    @GET
 	    @Path("/{nomCategorie}")
 	    @Produces(MediaType.APPLICATION_JSON)
-	    public ModeleCategorie lookupModeleByName(@PathParam("nomCategorie") String nomCategorie) {
-	        ModeleCategorie modeleCategorie = repository.findByName(nomCategorie);
+	    public List<ModeleCategorie> lookupModeleByName(@PathParam("nomCategorie") String nomCategorie) {
+	        List<ModeleCategorie> modeleCategorie = repository.findByName(nomCategorie);
 	        if (modeleCategorie == null) {
 	            throw new WebApplicationException(Response.Status.NOT_FOUND);
 	        }
