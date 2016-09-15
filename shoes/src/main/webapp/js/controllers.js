@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-function ModelesCtrl($scope, $http, Modeles) {
+function ModelesCtrl($scope, $http, Modeles,$location) {
 
     // Define a refresh function, that updates the data from the REST service
     $scope.refresh = function() {
@@ -79,8 +79,32 @@ function ModelesCtrl($scope, $http, Modeles) {
 
     // Set the default orderBy to the name property
     $scope.orderBy = 'nomModele';
+    $scope.go=function(urlD,nomModele){
+    	var postObject = new Object();
+        postObject.data = "ok";
+       
+        //var s=JSON.stringify(postObject);
+
+        $http({
+            url: urlD,
+            dataType: 'json',
+            method: 'POST',
+            data: postObject,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).success(function(response){
+            $scope.response = response;
+            
+        }).error(function(error){
+            $scope.error = error;
+        });
+        $location.path(urlD);
+	}
+    
 }
-function descriptionCtrl($scope, $http, Modeles) {
-		
+function DescriptionCtrl($scope, $http, Modeles,$location) {
+	$scope.dataR=angular.fromJson($scope.postObject.response);
+	$scope.test=dataR.data;
 }
 

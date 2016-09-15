@@ -55,7 +55,6 @@ public class ModeleResourceRestService {
 	        if (modele == null) {
 	            throw new WebApplicationException(Response.Status.NOT_FOUND);
 	        }
-	        System.out.println("ok");
 	        return modele;
 	    }
 

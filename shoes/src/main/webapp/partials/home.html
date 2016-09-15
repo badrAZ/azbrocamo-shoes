@@ -17,7 +17,7 @@
 -->
 <!-- This is a partial, and is templated by AngularJS -->
 <div>
-    <h1>Sprint 1: Affichage des produits disponibles</h1>
+    <h1>Sprint 1: Affichage des produits disponibles {{test}}</h1>
 
  
     <!-- If there are no members registered, instead of showing the table, we show a simple message. -->
@@ -29,7 +29,7 @@
         <!-- The table is built using the AngularJS repeat function, iterating over the members variable, and ordering by the property specified in the orderBy variable -->
         
            <td ng-repeat="modele in modeles | orderBy:orderBy" ">
-            <a href="#/description" ng-click="go('/description)"><img id="im" src="{{modele.photo}}"/>
+            <a ng-click="go('/description',modele.nomModele)"><img id="im" src="{{modele.photo}}"/>
             <span id="nomM">{{modele.nomModele}}</span>
             <br/><span id="prix">{{modele.prix}} Euro</span></a>
 
