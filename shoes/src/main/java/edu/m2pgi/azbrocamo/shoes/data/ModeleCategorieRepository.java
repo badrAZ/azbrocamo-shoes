@@ -17,12 +17,19 @@ import edu.m2pgi.azbrocamo.shoes.model.ModeleCategorie;
 public class ModeleCategorieRepository {
 	  @Inject
 	    private EntityManager em;
-	  	
+	  List<ModeleCategorie> listCatM;
+	  ModeleCategorie modC;
 	    public List<ModeleCategorie> findByName(String nomCategorie) {
 	    	CriteriaBuilder cb = em.getCriteriaBuilder();
 	    	CriteriaQuery<ModeleCategorie> criteria = cb.createQuery(ModeleCategorie.class);
 	    	 Root<ModeleCategorie> modeleCategorie = criteria.from(ModeleCategorie.class);
-	        return em.find(ModeleCategorie.class, nomCategorie);
+	    	 do{
+	    		 modC=em.find(ModeleCategorie.class, nomCategorie);
+	    		 listCatM.add(modC);
+	    	 }while(modC!=null);
+	    	
+	    	 
+	    	 return listCatM;
 	    }
 
 	    public List<ModeleCategorie> findAllOrderedByName() {
