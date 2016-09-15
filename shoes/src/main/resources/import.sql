@@ -39,4 +39,3 @@ insert into ModeleCategorie (nomModele,nomCategorie) values('A400','Marche');
 insert into ModeleCategorie (nomModele,nomCategorie) values('A300','Classiques');
 insert into ModeleCategorie (nomModele,nomCategorie) values('A500','Classiques');
 insert into ModeleCategorie (nomModele,nomCategorie) values('A800','Classiques');
->>>>>>> branch 'master' of https://github.com/badrAZ/azbrocamo-shoes
