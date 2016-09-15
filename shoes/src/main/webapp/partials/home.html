@@ -17,14 +17,26 @@
 -->
 <!-- This is a partial, and is templated by AngularJS -->
 <div>
-    <h1>Sprint 1: Affichage des produits disponibles {{test}}</h1>
-
+    <h2>Liste de nos produits</h2>
+	<div id="navLeftHome">
+		<div id="searchBar">
+		  <input id="search" type="text" placeholder="Type here">
+   		  <input id="submit" type="submit" value="Search">
+   		  </div>
+   		 
+   		  <input type="color" id="colorSelect">
+   		  <br/><select name="mois" class="triProduit">
+   		 	<option value="Categorie"> Categorie </option>
+   		 	<option value="prix"> Prix</option>
+   		 </select>
+   		 
+	</div>
  
     <!-- If there are no members registered, instead of showing the table, we show a simple message. -->
     <em ng-show="modeles.length == 0">No registered modeles.</em>
-  
+  	<div id="listProduit">
     <table ng-hide="modeles.length == 0" class="simpletablestyle">
-        <thead>
+     
       
         <!-- The table is built using the AngularJS repeat function, iterating over the members variable, and ordering by the property specified in the orderBy variable -->
         
@@ -36,10 +48,10 @@
             </td>
            
     </table>
- 
+ </div>
     <div>
         <!-- The table has a button to manually refresh the values, in case, for example, someone else adds a member -->
         <input type="button" ng-click="refresh()" name="refresh"
             id="refresh" value="Refresh" />
     </div>
-</div>
+
