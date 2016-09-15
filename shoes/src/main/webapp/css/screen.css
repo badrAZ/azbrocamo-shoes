@@ -1,19 +1,4 @@
-/*
- * JBoss, Home of Professional Open Source
- * Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
- * contributors by the @authors tag. See the copyright.txt in the
- * distribution for a full listing of individual contributors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
 /* Core styles for the page */
 body {
   margin: 0;
@@ -22,6 +7,10 @@ body {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 0.8em;
   color:#363636;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  min-width: 800px;
 }
 
 #container {
@@ -181,4 +170,68 @@ input {
 #prix{
 	color: #171717;
 	font-size:15px;
+}
+
+header{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: no-wrap;
+}
+
+div#site_info{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: no-wrap;
+	max-width: 150px;
+}
+
+div#menus{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	height: 60px;
+	padding: 10px;
+	align-items: right;
+	flex-direction: right;
+	margin-top: 70px;
+}
+
+ul#main_menu{
+	margin-right: 10px;
+}
+
+ul#user_menu{
+	margin-left: auto;
+}
+
+ul#main_menu, ul#user_menu{
+	border: 1px solid black;
+	padding: 2px;
+}
+
+ul#main_menu li, ul#user_menu li{
+	display:inline-block;
+    list-style-type:none;
+    border-left: 1px solid black;
+    padding: 2px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+ul#main_menu li:nth-child(1), ul#user_menu li:nth-child(1){
+	border: none;
+}
+
+
+div#logo img{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#site_info p, div#site_info img, div#site_info h1{
+	margin-bottom: 0;
+	margin-top: 0;
 }
