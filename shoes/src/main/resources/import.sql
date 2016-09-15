@@ -24,3 +24,17 @@ insert into Modele (nomModele, note,prix,photo,description) values ('A400',30,10
 insert into Modele (nomModele, note,prix,photo,description) values ('A300',20,800,"http://www.grandes-chaussures.com/Files/21851/Img/01/Chaussures-grandes-pointures-hommes-Romika-R10L01B2-DxN.jpg","desc"); 
 insert into Modele (nomModele, note,prix,photo,description) values ('A800',20,60,"http://www.chemises-chaussures-hommes.com/330-969/chaussures-habillees-homme.jpg","desc"); 
 insert into Modele (nomModele, note,prix,photo,description) values ('A500',20,2000,"http://azure.sarenza.net/static/_img/productsV4/0000053483/HD_0000053483_91562_09.jpg?201202171658","desc"); 
+
+insert into Categorie (nomCategorie) values('Classiques');
+insert into Categorie (nomCategorie) values('Marche');
+insert into Categorie (nomCategorie) values('Pantoufles');
+insert into Categorie (nomCategorie) values('Ville');
+insert into Categorie (nomCategorie) values('Sport');
+
+insert into ModeleCategorie (nomModele,nomCategorie) values('A200','Sport');
+insert into ModeleCategorie (nomModele,nomCategorie) values('A200','Marche');
+insert into ModeleCategorie (nomModele,nomCategorie) values('A400','Ville');
+insert into ModeleCategorie (nomModele,nomCategorie) values('A400','Marche');
+insert into ModeleCategorie (nomModele,nomCategorie) values('A300','Classiques');
+insert into ModeleCategorie (nomModele,nomCategorie) values('A500','Classiques');
+insert into ModeleCategorie (nomModele,nomCategorie) values('A800','Classiques');
