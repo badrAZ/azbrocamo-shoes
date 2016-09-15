@@ -36,7 +36,7 @@ angular.module('azbrocamo', ['ngRoute','modelesService','ngAnimate','ngAria']).c
                 redirectTo : '/home'
             }).when('/description',{
             	templateUrl : 'partials/description.html',
-                controller : descriptionCtrl
+                controller : DescriptionCtrl
             });
         } ])
     .factory('ajaxNonceInterceptor', function() {
