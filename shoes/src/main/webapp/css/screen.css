@@ -27,7 +27,6 @@ body {
 #content {
   float: left;
   width: 100%;
-  margin: 20px;
 }
 #aside {
   font-size: 0.9em;
@@ -123,7 +122,6 @@ nav{
 }
 
 ul#main_menu{
-	height:40px;
 	margin-left:20px;
 }
 section nav ul#main_menu :hover{
@@ -132,13 +130,14 @@ section nav ul#main_menu :hover{
 
 nav ul#user_menu{
 	float: right;
-
 }
 
 ul#main_menu, ul#user_menu{
 	padding: 2px;
 	border-radius:5px;
 	background-color:#E3E3E3;
+	height: 40px;
+	vertical-align: center;
 }
 
 ul#main_menu li, ul#user_menu li{
@@ -148,6 +147,7 @@ ul#main_menu li, ul#user_menu li{
     padding: 2px;
     padding-left: 10px;
     padding-right: 10px;
+    margin-top: 5px;
     font-size:20px;
 }
 
@@ -203,27 +203,28 @@ div h2{
 }
 div#navLeftHome{
 	float:left;
-	width:400px;
-	margin-top:90px;
+	
+	width:300px;
+	margin-top:20px;
 	border:1px solid #bdc3c7;
-	height:200px;
-	width:480px;
+	padding-bottom: 15px;
 	padding-top:15px;
 	padding-left:25px;
+	margin-left: 20px;
 	text-align:center;
 	
 }
 div#navLeftHome #searchBar{
-	 background-color: #eaf8fc;
-    background-image: linear-gradient(#fff, #d4e8ec);
+	background-color: #eaf8fc;
     border-radius: 35px;    
     border-width: 1px;
     border-style: solid;
     border-color: #c4d9df #a4c3ca #83afb7;            
-    width: 400px;
+    width: 250px;
     height: 35px;
     padding: 10px;
     overflow: hidden; /* Clear floats */
+    background-image: linear-gradient(#fff, #d2d2d2);
 }
 #search, 
 #submit {
@@ -232,7 +233,7 @@ div#navLeftHome #searchBar{
 #search {
     padding: 5px 9px;
     height: 23px;
-    width: 250px;
+    width: 165px;
     border: 1px solid #a4c3ca;
     font: normal 13px 'trebuchet MS', arial, helvetica;
     background: #f1f1f1;
@@ -242,18 +243,17 @@ div#navLeftHome #searchBar{
 }
 #submit
 {       
-    background-color: #6cbb6b;
-    background-image: linear-gradient(#95d788, #6cbb6b);
+    background-color: #E3E3E3;
+    background-image: linear-gradient(#F1F1F1, #FFF);
     border-radius: 3px 50px 50px 3px;    
     border-width: 1px;
     border-style: solid;
-    border-color: #7eba7c #578e57 #447d43;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 
                 0 1px 0 rgba(255, 255, 255, 0.3) inset;
     height: 35px;
     margin: 0 0 0 10px;
     padding: 0;
-    width: 90px;
+    width: 50px;
     cursor: pointer;
     font: bold 14px Arial, Helvetica;
     color: #23441e;    
@@ -261,8 +261,9 @@ div#navLeftHome #searchBar{
 }
 
 #submit:hover {       
-    background-color: #95d788;
-    background-image: linear-gradient(#6cbb6b, #95d788);
+    background-color: #6c86ec;
+    background-image: linear-gradient(#F1F1F1, #FFF);
+    border-color: #8D8D8D #747474 black;
 }   
 
 #submit:active {       
@@ -294,12 +295,14 @@ div#navLeftHome .triProduit{
 
 /*-------------- liste produit --------*/
 #listProduit{
-	float:right;
-	margin-top:80px;
+	margin-left: 10px;
+	margin-top:20px;
+	float: left;
 }
 .simpletablestyle {
   background-color:#E6E7E8;
   width: 550px;
+  margin-left: 20px;
 }
 
 .simpletablestyle img {
@@ -310,7 +313,7 @@ div#navLeftHome .triProduit{
   height:2em;
   padding-left: 50px;
   font-size:11px;
-  padding:40px 40px;
+  padding:20px 40px;
 }
 
 .simpletablestyle th {
