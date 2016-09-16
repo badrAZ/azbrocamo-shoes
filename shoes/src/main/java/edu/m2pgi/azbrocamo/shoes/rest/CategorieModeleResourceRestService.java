@@ -24,39 +24,40 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import edu.m2pgi.azbrocamo.shoes.data.ModeleCategorieRepository;
+
 import edu.m2pgi.azbrocamo.shoes.data.ModeleRepository;
 
 import edu.m2pgi.azbrocamo.shoes.model.Modele;
-import edu.m2pgi.azbrocamo.shoes.model.ModeleCategorie;
 
-@Path("/modelesCategorie")
+@Path("/categories")
 @RequestScoped
-public class ModeleCategorieResourceRestService {
+public class CategorieModeleResourceRestService {
 	     @Inject
 	    private Logger log;
 
 	    @Inject
 	    private Validator validator;
-
 	    @Inject
-	    private ModeleCategorieRepository repository;
+	    private ModeleRepository repository;
+	 /*   @Inject*
+	    private ModeleRepository repository;*/
 
-	    @GET
+	   /* @GET
+	    @Path("/{nomCategorie}")
 	    @Produces(MediaType.APPLICATION_JSON)
-	    public List<ModeleCategorie> listAllModeles() {
-	        return repository.findAllOrderedByName();
-	    }
-
+	    public List<Modele> lookupCategorieModeleByName(@PathParam("nomCategorie") String nomCategorie) {
+	    	List<Modele>  modele = repository.findModelesByCategorieName(nomCategorie);
+	        if (modele == null) {
+	            throw new WebApplicationException(Response.Status.NOT_FOUND);
+	        }
+	        return modele;
+	    }*/
+	  
 	    @GET
 	    @Path("/{nomCategorie}")
 	    @Produces(MediaType.APPLICATION_JSON)
-	    public List<ModeleCategorie> lookupModeleByName(@PathParam("nomCategorie") String nomCategorie) {
-	        List<ModeleCategorie> modeleCategorie = repository.findByName(nomCategorie);
-	        if (modeleCategorie == null) {
-	            throw new WebApplicationException(Response.Status.NOT_FOUND);
-	        }
-	        return modeleCategorie;
+	    public List<Modele> lookupCategorieModeleByName(@PathParam("nomCategorie") String nomCategorie) {
+	    	List<Modele>  modele = repository.findModelesCategorie(nomCategorie);
+	        return modele;
 	    }
-
 }

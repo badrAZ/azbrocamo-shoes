@@ -94,3 +94,7 @@ function LoginCtrl($scope, $rootScope, $location, AuthenticationService){
 function RegisterCtrl($scope){
 	
 }
+function ModelesCategoriesCtrl($scope){
+	
+}
+

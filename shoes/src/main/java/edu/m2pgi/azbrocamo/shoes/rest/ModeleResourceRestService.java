@@ -29,6 +29,7 @@ import edu.m2pgi.azbrocamo.shoes.data.ModeleRepository;
 
 import edu.m2pgi.azbrocamo.shoes.model.Modele;
 
+
 @Path("/modeles")
 @RequestScoped
 public class ModeleResourceRestService {
@@ -57,5 +58,8 @@ public class ModeleResourceRestService {
 	        }
 	        return modele;
 	    }
+	 
+	    
+	  
 
 }
