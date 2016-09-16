@@ -17,25 +17,32 @@
 -->
 <!-- This is a partial, and is templated by AngularJS -->
 <div>
-    <h2>Liste de nos produits</h2>
+    <h1>Liste de nos produits</h1>
 	<div id="navLeftHome">
-		<h3>Filtres :</h3>
+		<h3>Recherche :</h3>
 		<div id="searchBar" style="margin-bottom: 10px;">
-		  <input id="search" type="text" placeholder="Type here">
+		  <input id="search" type="text" placeholder="Rechercher...">
    		  <input id="submit" type="submit" value="🔍">
    		</div>
+   		
+   		
+		<h3>Filtrer par couleur :</h3>
    		 
    		  <input type="color" id="colorSelect" style="margin-bottom: 10px;">
-   		  <br/><select name="mois" class="triProduit"  style="margin-bottom: 10px;">
-   		 	<option value="Categorie"> Categorie </option>
-   		 	<option value="prix"> Prix</option>
-   		 </select>
+   		  <br/>
    		 
    		 <div>
 	        <!-- The table has a button to manually refresh the values, in case, for example, someone else adds a member -->
 	        <input type="button" ng-click="refresh()" name="refresh"
 	            id="refresh" value="Valider" />
     	</div>
+    	
+    	
+    	<h3>Trier par:</h3>
+    	<select name="mois" class="triProduit"  style="margin-bottom: 10px;">
+   		 	<option value="Categorie"> Categorie </option>
+   		 	<option value="prix"> Prix</option>
+   		 </select>
    		 
 	</div>
  

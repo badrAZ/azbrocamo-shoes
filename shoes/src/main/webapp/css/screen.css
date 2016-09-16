@@ -198,8 +198,8 @@ form#register input, form#register textarea, form#login input, form#login label,
     margin-bottom: 15px;
 }
 
-div h2{
-	margin-left:100px;
+div.ng-scope h1{
+	margin-left:15px;
 }
 div#navLeftHome{
 	float:left;
@@ -213,6 +213,18 @@ div#navLeftHome{
 	margin-left: 20px;
 	text-align:center;
 	
+}
+div#navLeftDesc{
+	float:left;
+	width:200px;
+	margin-top:20px;
+	border:1px solid #bdc3c7;
+	padding-bottom: 15px;
+	padding-top:15px;
+	padding-left:10px;
+	padding-right:10px;
+	margin-left: 20px;
+	text-align:center;
 }
 div#navLeftHome #searchBar{
 	background-color: #eaf8fc;
@@ -276,7 +288,7 @@ div#navLeftHome #searchBar{
        border: 0;  /* Small centering fix for Firefox */
 }
 div#navLeftHome input[type="color"]{
-	margin-top:20px;
+	margin-top:0px;
 	
 	width:60px;
 	height:60px;
@@ -316,14 +328,6 @@ div#navLeftHome .triProduit{
   padding:20px 40px;
 }
 
-.simpletablestyle th {
-	background: url(../gfx/bkg-blkheader.png) black repeat-x top left;
-  font-size:12px;
-  font-weight:normal;
-  padding:0 10px 0 5px;
-  border-bottom:#999999 dotted 1px;
-}
-
 
 
 
@@ -347,7 +351,7 @@ table {
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #bdc3c7;
 }
 .btnlign{
 text-align:center;
@@ -390,4 +394,88 @@ height:60px;
 .addrcom={
 float : left;
 
+}
+
+div#description{
+	margin: 15px;
+	width: 100%;
+	text-align: center;
+}
+
+div.productPhoto{
+	width: 400px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+	border-radius: 10px;
+    border: 2px solid #bdc3c7;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.productPhoto img{
+    width: inherit;
+}
+
+div.productText{
+}
+
+div#cartQty{
+	
+}
+
+div#cartQty input{
+	width: 20px
+}
+
+div#cartQty a{
+	text-decoration: none;
+}
+
+div.productOptions div{
+	padding: 5px;
+}
+
+div.panier table{
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+}
+
+div.panier table tbody tr td img{
+	width: 20px;
+	height: 20px;
+}
+
+div.panier table tbody tr th, div.panier table tbody tr td{
+	border: 1px solid #bdc3c7;
+}
+
+div.panier table tbody tr th{
+	border: 1px solid #bdc3c7;
+}
+
+div.btnlign img{
+	height: 60px;
+	width: 60px;
+	margin: 10px;
+}
+
+div.btnlign{
+	float: left;
+	margin: 10px;
+}
+
+div.btnlign p{
+	margin-top: 0;	
+}
+
+div.btncontainer{
+	width: 250px;
+    margin: 0 auto;
+}
+
+h2.pagename{
+	margin-left: 20px;
 }
