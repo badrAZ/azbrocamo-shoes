@@ -111,6 +111,11 @@ angular.module('azbrocamo', ['ngRoute','modelesService','ngAnimate','ngAria','ng
             $cookieStore.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic ';
         };
+        
+        service.GetUser = function(){
+        	console.log($rootScope.globals.currentUser);
+        	return $rootScope.globals.currentUser;
+        }
  
         return service;
     }])
@@ -199,4 +204,9 @@ angular.module('azbrocamo', ['ngRoute','modelesService','ngAnimate','ngAria','ng
 	    };
 	 
 	    /* jshint ignore:end */
+	})
+	.controller('UserMenuCtrl', function($scope, $rootScope, AuthenticationService){
+		$rootScope.watch('globals', function(newVal, oldVal){
+			console.log($rootScope);
+		})
 	});

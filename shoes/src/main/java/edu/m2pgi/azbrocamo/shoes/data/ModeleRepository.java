@@ -9,7 +9,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-
+import edu.m2pgi.azbrocamo.shoes.model.Categorie;
 import edu.m2pgi.azbrocamo.shoes.model.Modele;
 
 @ApplicationScoped

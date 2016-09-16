@@ -72,9 +72,12 @@ function DescriptionCtrl($scope, $routeParams, Modele) {
 
 function LoginCtrl($scope, $rootScope, $location, AuthenticationService){
 	//RAZ creds
-	AuthenticationService.ClearCredentials();
+	$scope.clear = function(){
+		AuthenticationService.ClearCredentials();
+	}
 	
 	$scope.login = function () {
+		$scope.clear();
 		console.log("Username: "+$scope.username+" Password: "+$scope.password);
         $scope.dataLoading = true;
         AuthenticationService.Login($scope.username, $scope.password, function(response) {
@@ -88,6 +91,10 @@ function LoginCtrl($scope, $rootScope, $location, AuthenticationService){
             }
         });
     };
+    
+    $scope.info = function(){
+    	AuthenticationService.GetUser();
+    }
 	
 }
 

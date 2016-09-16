@@ -27,7 +27,6 @@ public class ModeleCategorieRepository {
 	    		 modC=em.find(ModeleCategorie.class, nomCategorie);
 	    		 listCatM.add(modC);
 	    	 }while(modC!=null);
-	    	
 	    	 
 	    	 return listCatM;
 	    }
