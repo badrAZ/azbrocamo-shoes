@@ -9,7 +9,6 @@ import java.util.Set;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
-
 /**
  * Entity implementation class for Entity: Categorie
  *
@@ -17,11 +16,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @SuppressWarnings("serial")
 @Entity
 @XmlRootElement
+
 public class Categorie implements Serializable {
 
 	   
 	@Id
 	private String nomCategorie;
+	
 	 @ManyToMany (cascade=CascadeType.PERSIST,fetch = FetchType.EAGER)
 	    @JoinTable(name="CAT_MOD", 
 	          joinColumns=@JoinColumn(name="nomCategorie"),
