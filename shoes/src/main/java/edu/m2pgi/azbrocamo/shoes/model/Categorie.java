@@ -22,11 +22,12 @@ public class Categorie implements Serializable {
 	   
 	@Id
 	private String nomCategorie;
-	 @ManyToMany (cascade=CascadeType.PERSIST,fetch = FetchType.LAZY)
+	 @ManyToMany (cascade=CascadeType.PERSIST,fetch = FetchType.EAGER)
 	    @JoinTable(name="CAT_MOD", 
 	          joinColumns=@JoinColumn(name="nomCategorie"),
 	          inverseJoinColumns=@JoinColumn(name="nomModele"))
-	    private Collection<Modele> modeles=new ArrayList<Modele>();;
+
+	    private Set<Modele> modeles=new HashSet<Modele>();;
 	    
 	
 	private static final long serialVersionUID = 1L;

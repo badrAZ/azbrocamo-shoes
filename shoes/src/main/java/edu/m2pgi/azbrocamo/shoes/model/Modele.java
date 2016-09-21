@@ -30,8 +30,8 @@ public class Modele implements Serializable {
 	@Lob
 	private String description;
 	private static final long serialVersionUID = 1L;
-	 @ManyToMany(mappedBy="modeles", cascade=CascadeType.PERSIST,fetch = FetchType.LAZY)
-	    private Collection<Categorie> categories=new ArrayList<Categorie>();
+	 @ManyToMany(mappedBy="modeles", cascade=CascadeType.PERSIST,fetch = FetchType.EAGER)
+	    private Set<Categorie> categories=new HashSet<Categorie>();
 
 	public Modele() {
 		super();
