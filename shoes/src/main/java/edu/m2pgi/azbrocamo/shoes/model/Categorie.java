@@ -2,6 +2,8 @@ package edu.m2pgi.azbrocamo.shoes.model;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,8 +22,13 @@ public class Categorie implements Serializable {
 	   
 	@Id
 	private String nomCategorie;
-	/*@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="categorie")
-	 private Set<Modele> modeles = new HashSet<Modele>();*/
+	 @ManyToMany (cascade=CascadeType.PERSIST,fetch = FetchType.LAZY)
+	    @JoinTable(name="CAT_MOD", 
+	          joinColumns=@JoinColumn(name="nomCategorie"),
+	          inverseJoinColumns=@JoinColumn(name="nomModele"))
+	    private Collection<Modele> modeles=new ArrayList<Modele>();;
+	    
+	
 	private static final long serialVersionUID = 1L;
 
 	public Categorie() {
@@ -34,9 +41,25 @@ public class Categorie implements Serializable {
 	public void setNomCategorie(String nomCategorie) {
 		this.nomCategorie = nomCategorie;
 	}
-	/*public Set<Modele> getModeles(){
-		return this.modeles;
-	}*/
-	
+	  public void addModele(Modele modele) {
+			  if (!getModeles().contains(modele) ) {
+		        	getModeles().add(modele);
+		      }
+			  
+		      if (!modele.getCategories().contains(this)) {
+		        	modele.getCategories().add(this);
+		      }
+		  
+	        
+	    }
+
+	    public Collection<Modele> getModeles() {
+	        return modeles;
+	    }
    
 }
+/*public Set<Modele> getModeles(){
+return this.modeles;
+}*/
+/*@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="categorie")
+private Set<Modele> modeles = new HashSet<Modele>();*/

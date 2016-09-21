@@ -34,7 +34,7 @@ public class ModeleRepository {
 	        criteria.select(modele).orderBy(cb.asc(modele.get("nomModele")));
 	        return em.createQuery(criteria).getResultList();
 	    }
-	    public List<Modele> findModelesCategorie(String nomCategorie){
+	    /*public List<Modele> findModelesCategorie(String nomCategorie){
 	    	
 	    	CriteriaBuilder cb = em.getCriteriaBuilder();
 	    	  CriteriaQuery<Modele> criteria = cb.createQuery(Modele.class);
@@ -46,7 +46,7 @@ public class ModeleRepository {
 		        	
 		        }
 		      return newListMod;
-	    }
+	    }*/
 	
 	  /*  public List<Modele> findModelesByCategorieName(String nomCategorie){
 	    	em = emf.createEntityManager();

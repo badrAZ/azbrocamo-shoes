@@ -1,5 +1,10 @@
+
+	<h1>Description produit: {{modele.nomModele}}</h2>
 <div style="display: flex" id="productDesc">
-	<div class="productOptions" style="width: 200px;">
+	
+	<div class="productOptions" id="navLeftDesc" >
+	<h3>Votre choix :</h3>
+	<div>
 		<label for="size">Taille:</label>
 		<select name="size">
 			  <option>36</option>
@@ -24,6 +29,7 @@
 			  <option>45.5</option>
 			  <option>46</option>
 		</select> 
+	</div>
 		
 		<div id="colorChooser">
 			<label for="colors">Couleur:</label>
@@ -36,12 +42,17 @@
 			</select> 
 		</div>
 		
-	</div>
-	<div>
-		<div class="productPhoto" style="width: 100%">
-			<img style="width: 300px" src="{{modele.photo}}" alt="Photo du produit">
+		<div id="addCart">
+			<div id="cartQty"><a id="buttonSub" href>-</a><input type=number><a id="buttonAdd" href>+</a></div>
+			<button>Ajouter au panier</button>
 		</div>
-		<div class="productText" style="width: 100%">
+		
+	</div>
+	<div id="description">
+		<div class="productPhoto">
+			<img src="{{modele.photo}}" alt="Photo du produit">
+		</div>
+		<div class="productText">
 			<h2 style="margin: 0">Description du produit : </h2>
 			<p>{{modele.description}}</p>
 		</div>

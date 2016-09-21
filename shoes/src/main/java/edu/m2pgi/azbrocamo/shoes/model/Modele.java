@@ -3,6 +3,8 @@ package edu.m2pgi.azbrocamo.shoes.model;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,14 +27,12 @@ public class Modele implements Serializable {
 	private Integer note;
 	private float prix;
 	private String photo;
-	private String nomCategorie;
 	@Lob
 	private String description;
 	private static final long serialVersionUID = 1L;
+	 @ManyToMany(mappedBy="modeles", cascade=CascadeType.PERSIST,fetch = FetchType.LAZY)
+	    private Collection<Categorie> categories=new ArrayList<Categorie>();
 
-	/*@ManyToOne(fetch=FetchType.LAZY)
-	 @JoinColumn(name="nomCategorie")
-     private Categorie categorie;*/
 	public Modele() {
 		super();
 	}   
@@ -65,14 +65,7 @@ public class Modele implements Serializable {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	public String getNomCategorie() {
-		return this.nomCategorie;
-	}
-	
 
-	public void NomCategorie(String nomCategorie) {
-		this.nomCategorie = nomCategorie;
-	}
 	public String getDescription() {
 		return this.description;
 	}
@@ -80,16 +73,33 @@ public class Modele implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	/*public Categorie getCategorie(){
-		return this.categorie;
-	}
-	public void setCategorie(Categorie categorie) {
-		if(this.categorie != null){
-			this.categorie.getModeles().remove(this);
-		}
-		this.categorie=categorie;
-		this.categorie.getModeles().add(this);
-		
-	}*/
+	 public Collection<Categorie> getCategories() {
+	        return categories;
+	    }
+	    
+	    public void addCategorie(Categorie categorie) {
+	    		 if (!getCategories().contains(categorie)) {
+	 	        	getCategories().add(categorie);
+	 	        }
+	 	        if (!categorie.getModeles().contains(this)) {
+	 	        	categorie.getModeles().add(this);
+	 	        }
+	    	
+	       
+	    }
    
 }
+/*@ManyToOne(fetch=FetchType.LAZY)
+@JoinColumn(name="nomCategorie")
+private Categorie categorie;*/
+/*public Categorie getCategorie(){
+return this.categorie;
+}
+public void setCategorie(Categorie categorie) {
+if(this.categorie != null){
+	this.categorie.getModeles().remove(this);
+}
+this.categorie=categorie;
+this.categorie.getModeles().add(this);
+
+}*/

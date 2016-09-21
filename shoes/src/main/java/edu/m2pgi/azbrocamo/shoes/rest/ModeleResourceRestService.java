@@ -26,28 +26,26 @@ import javax.ws.rs.core.Response;
 
 
 import edu.m2pgi.azbrocamo.shoes.data.ModeleRepository;
-
+import edu.m2pgi.azbrocamo.shoes.model.Categorie;
 import edu.m2pgi.azbrocamo.shoes.model.Modele;
+
 
 
 @Path("/modeles")
 @RequestScoped
 public class ModeleResourceRestService {
-	     @Inject
-	    private Logger log;
-
-	    @Inject
-	    private Validator validator;
-
 	    @Inject
 	    private ModeleRepository repository;
+	   
 
 	    @GET
 	    @Produces(MediaType.APPLICATION_JSON)
 	    public List<Modele> listAllModeles() {
 	        return repository.findAllOrderedByName();
 	    }
-
+        
+	   
+	    
 	    @GET
 	    @Path("/{nomModele}")
 	    @Produces(MediaType.APPLICATION_JSON)
@@ -59,7 +57,13 @@ public class ModeleResourceRestService {
 	        return modele;
 	    }
 	 
-	    
+	   /* @POST
+	    @Consumes(MediaType.APPLICATION_JSON)
+	    @Produces(MediaType.APPLICATION_JSON)
+	    public void createMember(Modele modele,Categorie categorie) {
+	    	registration.register(modele,categorie);
+	    }*/
+
 	  
 
 }

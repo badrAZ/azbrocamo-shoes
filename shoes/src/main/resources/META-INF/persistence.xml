@@ -27,7 +27,7 @@
          can find it in the source at src/main/webapp/WEB-INF/kitchensink-quickstart-ds.xml -->
       <jta-data-source>java:jboss/datasources/ShoesDS</jta-data-source>
       <properties>
-         <property name="hibernate.hbm2ddl.auto" value="create-drop" /><!-- update -->
+         <property name="hibernate.hbm2ddl.auto" value="update" /><!-- update -->
          <!-- <property name="hibernate.hbm2ddl.auto" value="create" /> -->
          <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
       </properties>

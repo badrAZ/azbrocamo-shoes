@@ -206,7 +206,7 @@ angular.module('azbrocamo', ['ngRoute','modelesService','ngAnimate','ngAria','ng
 	    /* jshint ignore:end */
 	})
 	.controller('UserMenuCtrl', function($scope, $rootScope, AuthenticationService){
-		$rootScope.watch('globals', function(newVal, oldVal){
+		/*$rootScope.watch('globals', function(newVal, oldVal){
 			console.log($rootScope);
-		})
+		})*/
 	});
