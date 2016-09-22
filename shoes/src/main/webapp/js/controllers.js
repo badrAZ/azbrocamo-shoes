@@ -23,7 +23,8 @@ function ModelesCtrl($scope, $http, Modeles,$location,$routeParams,Categories) {
     $scope.refresh = function() {
     	if($routeParams.nomCategorie != null){
     		$scope.nomCategorie =$routeParams.nomCategorie;
-    		 $scope.modeles = Categories.get({nomCategorie:$routeParams.nomCategorie});//query({id:$scope.nomCategorie});
+    		// $scope.modeles = Categories.get({nomCategorie:$routeParams.nomCategorie});//query({id:$scope.nomCategorie});
+    		$scope.modeles = Categories.query({nomCategorie:$routeParams.nomCategorie});
     		console.log($scope.modeles);
     	}
     	else

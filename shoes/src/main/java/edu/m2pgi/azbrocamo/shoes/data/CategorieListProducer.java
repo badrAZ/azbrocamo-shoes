@@ -24,7 +24,7 @@ public class CategorieListProducer {
 	        return categories;
 	    }
 
-	    public void onCategorieListChanged(@Observes(notifyObserver = Reception.IF_EXISTS) final Modele modele) {
+	    public void onCategorieListChanged(@Observes(notifyObserver = Reception.IF_EXISTS) final Categorie categorie) {
 	        retrieveAllCategoriesOrderedByName();
 	    }
 
