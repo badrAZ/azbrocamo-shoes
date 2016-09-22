@@ -34,6 +34,9 @@ angular.module('azbrocamo', ['ngRoute','modelesService','ngAnimate','ngAria','ng
             // Add a default route
             }).otherwise({
                 redirectTo : '/home'
+            }).when('/home/:nomCategorie',{
+            	templateUrl : 'partials/home.html',
+                controller : ModelesCtrl
             }).when('/description/:nomModele',{
             	templateUrl : 'partials/description.html',
                 controller : DescriptionCtrl

@@ -17,11 +17,20 @@
 
 
 
-function ModelesCtrl($scope, $http, Modeles,$location) {
+function ModelesCtrl($scope, $http, Modeles,$location,$routeParams,Categories) {
 
     // Define a refresh function, that updates the data from the REST service
     $scope.refresh = function() {
-        $scope.modeles = Modeles.query();
+    	if($routeParams.nomCategorie != null){
+    		$scope.nomCategorie =$routeParams.nomCategorie;
+    		 $scope.modeles = Categories.get({nomCategorie:$routeParams.nomCategorie});//query({id:$scope.nomCategorie});
+    		console.log($scope.modeles);
+    	}
+    	else
+    		{
+    		$scope.modeles = Modeles.query();
+    		}
+        
     };
 
     // Define a clearMessages function that resets the values of the error and
@@ -42,7 +51,7 @@ function ModelesCtrl($scope, $http, Modeles,$location) {
         // Clear input fields. If $scope.newModele was set to an empty object {},
         // then invalid form values would not be reset.
         // By specifying all properties, input fields with invalid values are also reset.
-        $scope.newModele = {nomModele: "", note: ""};
+      //  $scope.newModele = {nomModele: "", note: ""};
 
         // clear messages
         $scope.clearMessages();
@@ -56,7 +65,8 @@ function ModelesCtrl($scope, $http, Modeles,$location) {
     $scope.reset();
 
     // Set the default orderBy to the name property
-    $scope.orderBy = 'nomModele';
+    if($routeParams.nomCategorie != null){$scope.orderBy = 'nomCategorie'} 
+    else{$scope.orderBy = 'nomModele'};
     
 }
 function DescriptionCtrl($scope, $routeParams, Modele) {
@@ -101,7 +111,5 @@ function LoginCtrl($scope, $rootScope, $location, AuthenticationService){
 function RegisterCtrl($scope){
 	
 }
-function ModelesCategoriesCtrl($scope){
-	
-}
+
 

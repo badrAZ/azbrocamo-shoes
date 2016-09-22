@@ -22,7 +22,7 @@
 		<h3>Recherche :</h3>
 		<div id="searchBar" style="margin-bottom: 10px;">
 		  <input id="search" type="text" placeholder="Rechercher...">
-   		  <input id="submit" type="submit" value="🔍">
+   		  <input id="submit" type="submit" value="ðŸ”�">
    		</div>
    		
    		
@@ -54,7 +54,7 @@
       
         <!-- The table is built using the AngularJS repeat function, iterating over the members variable, and ordering by the property specified in the orderBy variable -->
         
-           <td ng-repeat="modele in modeles | orderBy:orderBy" ">
+           <td ng-repeat="modele in modeles | orderBy:orderBy" >
             <a href="#description/{{modele.nomModele}}"><img id="im" src="{{modele.photo}}"/>
             <span id="nomM">{{modele.nomModele}}</span>
             <br/><span id="prix">{{modele.prix}} Euro</span></a>
