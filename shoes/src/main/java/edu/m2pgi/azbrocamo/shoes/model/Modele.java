@@ -6,10 +6,13 @@ import java.lang.String;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /**
  * Entity implementation class for Entity: Modele
@@ -31,8 +34,9 @@ public class Modele implements Serializable {
 	private String description;
 	private static final long serialVersionUID = 1L;
 	
-	 @ManyToMany(mappedBy="modeles", cascade=CascadeType.PERSIST,fetch = FetchType.EAGER)
-	    private Set<Categorie> categories=new HashSet<Categorie>();
+	@ManyToMany(mappedBy="modeles", cascade=CascadeType.PERSIST,fetch = FetchType.EAGER)
+	@JsonManagedReference
+	private List<Categorie> categories=new ArrayList<Categorie>();
 
 	public Modele() {
 		super();

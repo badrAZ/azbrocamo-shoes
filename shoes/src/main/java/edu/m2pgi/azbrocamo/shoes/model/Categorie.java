@@ -5,10 +5,14 @@ import java.lang.String;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 /**
  * Entity implementation class for Entity: Categorie
  *
@@ -23,15 +27,15 @@ public class Categorie implements Serializable {
 	@Id
 	private String nomCategorie;
 	
-	 @ManyToMany (cascade=CascadeType.PERSIST,fetch = FetchType.EAGER)
-	    @JoinTable(name="CAT_MOD", 
-	          joinColumns=@JoinColumn(name="nomCategorie"),
-	          inverseJoinColumns=@JoinColumn(name="nomModele"))
-
-	    private Set<Modele> modeles=new HashSet<Modele>();;
+	@ManyToMany (cascade=CascadeType.PERSIST,fetch = FetchType.EAGER)
+	@JoinTable(name="CAT_MOD", 
+		joinColumns=@JoinColumn(name="nomCategorie"),
+		inverseJoinColumns=@JoinColumn(name="nomModele"))
+	@JsonBackReference
+	private List<Modele> modeles=new ArrayList<Modele>();
 	    
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;	
 
 	public Categorie() {
 		super();
