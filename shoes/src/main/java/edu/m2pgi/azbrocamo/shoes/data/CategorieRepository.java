@@ -1,6 +1,7 @@
 package edu.m2pgi.azbrocamo.shoes.data;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -27,8 +28,8 @@ public class CategorieRepository {
 	        criteria.select(categorie).orderBy(cb.asc(categorie.get("nomCategorie")));
 	        return em.createQuery(criteria).getResultList();
 	    }
-	  public List<Modele> findCategoriesModeles(String nomCategorie){
+	  public Set<Modele> findCategoriesModeles(String nomCategorie){
 		  Categorie cat = em.find(Categorie.class, nomCategorie);
-		  return (List<Modele>) cat.getModeles();
+		  return (Set<Modele>) cat.getModeles();
 	  }
 }

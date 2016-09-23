@@ -11,6 +11,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import edu.m2pgi.azbrocamo.shoes.model.Article;
 import edu.m2pgi.azbrocamo.shoes.model.Categorie;
 import edu.m2pgi.azbrocamo.shoes.model.Modele;
 @Stateless
@@ -55,6 +56,24 @@ public class DaoBD {
 		    	modele3.setPrix(800);
 		    	modele3.setPhoto("http://www.grandes-chaussures.com/Files/21851/Img/01/Chaussures-grandes-pointures-hommes-Romika-R10L01B2-DxN.jpg");
 		    	modele3.setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+		    	Article article1Modele1 = new Article();
+		    	article1Modele1.setCouleur("Bleu");
+		    	article1Modele1.setTaille(38);
+		    	Article article2Modele1 = new Article();
+		    	article2Modele1.setCouleur("Bleu");
+		    	article2Modele1.setTaille(44);
+		    	Article article3Modele1 = new Article();
+		    	article3Modele1.setCouleur("Noir");
+		    	article3Modele1.setTaille(44);
+		    	Article article4Modele1 = new Article();
+		    	article4Modele1.setCouleur("Noir");
+		    	article4Modele1.setTaille(39);
+		    	Article article1Modele2 = new Article();
+		    	article1Modele2.setCouleur("Noir");
+		    	article1Modele2.setTaille(38);
+		    	Article article2Modele2 = new Article();
+		    	article2Modele2.setCouleur("Marron");
+		    	article2Modele2.setTaille(40);
 		    	em.persist(modele1);
 		    	em.persist(modele2);
 		    	em.persist(modele3);
@@ -63,6 +82,12 @@ public class DaoBD {
 		    	em.persist(categorie3);
 		    	em.persist(categorie4);
 		    	em.persist(categorie5);
+		    	em.persist(article1Modele1);
+		    	em.persist(article2Modele1);
+		    	em.persist(article3Modele1);
+		    	em.persist(article4Modele1);
+		    	em.persist(article1Modele2);
+		    	em.persist(article2Modele2);
 		    	em.flush();
 		    	if(modele1 != null && categorie1 != null){
 		    		modele1.addCategorie(categorie4);
@@ -75,6 +100,18 @@ public class DaoBD {
 		    		categorie2.addModele(modele2);
 			    	categorie4.addModele(modele1);
 			    	categorie5.addModele(modele1);
+			    	modele1.addArticle(article1Modele1);
+		    		modele1.addArticle(article2Modele1);
+		    		modele1.addArticle(article3Modele1);
+		    		modele1.addArticle(article4Modele1);
+		    		modele2.addArticle(article1Modele2);
+		    		modele2.addArticle(article2Modele2);
+			    	article1Modele1.addModele(modele1);
+			    	article2Modele1.addModele(modele1);
+			    	article3Modele1.addModele(modele1);
+			    	article4Modele1.addModele(modele1);
+			    	article1Modele2.addModele(modele2);
+			    	article2Modele2.addModele(modele2);
 			    	em.merge(modele1);
 			    	em.merge(modele2);
 			    	em.merge(modele3);
@@ -82,6 +119,12 @@ public class DaoBD {
 			    	em.merge(categorie2);
 			    	em.merge(categorie4);
 			    	em.merge(categorie5);
+			    	em.merge(article1Modele1);
+			    	em.merge(article2Modele1);
+			    	em.merge(article3Modele1);
+			    	em.merge(article4Modele1);
+			    	em.merge(article1Modele2);
+			    	em.merge(article2Modele2);
 			    	em.flush();
 		    	}
 		    	

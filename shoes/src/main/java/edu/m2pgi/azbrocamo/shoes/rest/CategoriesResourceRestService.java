@@ -1,6 +1,7 @@
 package edu.m2pgi.azbrocamo.shoes.rest;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -34,8 +35,8 @@ public class CategoriesResourceRestService {
 	  @GET
 	    @Path("/{nomCategorie}")
 	    @Produces(MediaType.APPLICATION_JSON)
-	  public List<Modele> lookupModeleByName(@PathParam("nomCategorie") String nomCategorie) {
-	        List<Modele> modele = repository.findCategoriesModeles(nomCategorie);
+	  public Set<Modele> lookupModeleByName(@PathParam("nomCategorie") String nomCategorie) {
+	        Set<Modele> modele = repository.findCategoriesModeles(nomCategorie);
 	        if (modele == null) {
 	            throw new WebApplicationException(Response.Status.NOT_FOUND);
 	        }

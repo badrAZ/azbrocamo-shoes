@@ -78,6 +78,7 @@ function DescriptionCtrl($scope, $routeParams, Modele) {
 	$scope.modele=Modele.get({nomModele:$routeParams.nomModele});
 	
 	console.log($scope.modele);
+
 	
 }
 
