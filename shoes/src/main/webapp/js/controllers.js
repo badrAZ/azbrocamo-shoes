@@ -78,6 +78,8 @@ function DescriptionCtrl($scope, $routeParams, Modele) {
 	$scope.modele=Modele.get({nomModele:$routeParams.nomModele});
 	
 	console.log($scope.modele);
+	
+
 
 	
 }
@@ -113,5 +115,14 @@ function LoginCtrl($scope, $rootScope, $location, AuthenticationService){
 function RegisterCtrl($scope){
 	
 }
-
+function PanierCtrl($scope){
+	$scope.panierPersist=function(taille,couleur,quantite){
+		$scope.size=taille;
+		$scope.color=couleur;
+		$scope.quantity=quantite;
+		console.log($scope.size);
+		console.log($scope.color);
+		console.log($scope.quantity);
+	}
+}
 

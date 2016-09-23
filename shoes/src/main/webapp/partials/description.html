@@ -1,6 +1,6 @@
 
 	<h1>Description produit: {{modele.nomModele}}</h2>
-<div style="display: flex" id="productDesc">
+<div style="display: flex" id="productDesc" >
 	
 	<div class="productOptions" id="navLeftDesc" >
 	<h3>Votre choix :</h3>
@@ -16,9 +16,9 @@
 		 	<select ng-disabled="!tailleS" name="colors" ng-model="colors" ng-options="article.couleur for article in modele.articles | filter: {taille: tailleS.taille}"></select> 
 		</div>
 		
-		<div id="addCart">
-			<div id="cartQty"><a id="buttonSub" href>-</a><input type=number><a id="buttonAdd" href>+</a></div>
-			<button>Ajouter au panier</button>
+		<div id="addCart"  ng-controller="getElementPanierCtrl">
+			<input type=number ng-model="quantite">
+			<a href="/shoes/#/cart"><button ng-click="getArticlePanier(modele.nomModele,modele.prix,tailleS.taille,quantite,colors.couleur)" >Ajouter au panier </button></a>
 		</div>
 		
 	</div>

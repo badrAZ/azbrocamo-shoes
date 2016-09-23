@@ -16,7 +16,7 @@
  */
 // Define any routes for the app
 // Note that this app is a single page app, and each partial is routed to using the URL fragment. For example, to select the 'home' route, the URL is http://localhost:8080/jboss-as-kitchensink-angularjs/#/home
-angular.module('azbrocamo', ['ngRoute','modelesService','ngAnimate','ngAria','ngCookies','angular.filter']).config(
+angular.module('azbrocamo', ['ngRoute','modelesService','ngAnimate','ngAria','ngCookies','angular.filter','ngStorage']).config(
         [ '$httpProvider', '$routeProvider', function($httpProvider, $routeProvider) {
         	
         	
@@ -48,7 +48,7 @@ angular.module('azbrocamo', ['ngRoute','modelesService','ngAnimate','ngAria','ng
             	controller : RegisterCtrl
             }).when('/cart', {
             	templateUrl : 'partials/panier.html',
-            	controller : RegisterCtrl
+            	controller : PanierCtrl
             });
         } ])
     .factory('ajaxNonceInterceptor', function() {
@@ -212,4 +212,86 @@ angular.module('azbrocamo', ['ngRoute','modelesService','ngAnimate','ngAria','ng
 		/*$rootScope.watch('globals', function(newVal, oldVal){
 			console.log($rootScope);
 		})*/
+	}).factory('sharedPropertiesService',function($http, $q){
+		 var hashtable = {};
+
+		    return {
+		        setValue: function (key, value) {
+		            hashtable[key] = value;
+		        },
+		        getValue: function (key) {
+		            return hashtable[key];
+		        }
+		    }
+	
+	}).controller('getElementPanierCtrl',function($scope,sharedPropertiesService,$localStorage){
+		$scope.panier= JSON.parse(localStorage.getItem('articles')) || [];
+		$scope.getArticlePanier=function(nomModele,prix,taille,quantite,couleur){
+			$scope.size=taille;
+			sharedPropertiesService.setValue(1,$scope.size);
+			$scope.color=couleur;
+			sharedPropertiesService.setValue(2,$scope.color);
+			$scope.quantity=quantite;
+			sharedPropertiesService.setValue(3,$scope.quantity);
+			$scope.nomModele=nomModele;
+			sharedPropertiesService.setValue(4,$scope.nomModele);
+			$scope.prix=prix;
+			sharedPropertiesService.setValue(5,$scope.prix);
+			
+		}
+		if(sharedPropertiesService.getValue(4) != null){
+			$scope.newArticle={
+					nomModele:sharedPropertiesService.getValue(4),
+					prix:sharedPropertiesService.getValue(5),
+					taille:sharedPropertiesService.getValue(1),
+					quantite:sharedPropertiesService.getValue(3),
+					couleur:sharedPropertiesService.getValue(2)
+			};
+			$scope.panier.push($scope.newArticle);
+		}
+	
+		 localStorage.setItem('articles', JSON.stringify($scope.panier));
+			/*$scope.panier.push({
+				  nomModele:sharedPropertiesService.getValue(4),
+					prix:sharedPropertiesService.getValue(5),
+					taille:sharedPropertiesService.getValue(1),
+					quantite:sharedPropertiesService.getValue(3),
+					couleur:sharedPropertiesService.getValue(2)
+		        });
+			localStorage.setItem("articles",JSON.stringify($scope.panier.articles));
+			$scope.panier.articles=JSON.parse(localStorage.getItem("articles"));
+			console.log($scope.panier.articles);*/
+		
+		
+		/*$scope.addPanier=function(nomModele,prix,taille,quantite,couleur){
+			$scope.size=taille;
+			sharedPropertiesService.setValue(1,$scope.size);
+			$scope.color=couleur;
+			sharedPropertiesService.setValue(2,$scope.color);
+			$scope.quantity=quantite;
+			sharedPropertiesService.setValue(3,$scope.quantity);
+			$scope.nomModele=nomModele;
+			sharedPropertiesService.setValue(4,$scope.nomModele);
+			$scope.prix=prix;
+			sharedPropertiesService.setValue(5,$scope.prix);
+			console.log($scope.size);
+			console.log($scope.color);
+			console.log($scope.quantity);
+			console.log($scope.nomModele);
+			console.log($scope.prix);
+		}
+		$scope.panier={
+			nomModele:sharedPropertiesService.getValue(4),
+			prix:sharedPropertiesService.getValue(5),
+			taille:sharedPropertiesService.getValue(1),
+			quantite:sharedPropertiesService.getValue(3),
+			couleur:sharedPropertiesService.getValue(2)
+		
+		};
+		$scope.size=sharedPropertiesService.getValue(1);
+		$scope.color=sharedPropertiesService.getValue(2);
+		$scope.quantity=sharedPropertiesService.getValue(3);
+		$scope.nomModele=sharedPropertiesService.getValue(4);
+		$scope.prix=sharedPropertiesService.getValue(5);*/
+	
 	});

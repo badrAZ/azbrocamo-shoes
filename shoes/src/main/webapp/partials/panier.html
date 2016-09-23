@@ -1,10 +1,35 @@
-<div class='panier'>
+<div class='panier' >
 	<h2 class="pagename"> Mon Panier </h2>
-	<table class="tabarticle">
-		<tr><th>Modèle</th><th>Pointure</th><th>Couleur</th><th>motif</th><th>Quantité</th><th>Ajout/Retrait</th><th>Supression</th><th> Prix individuel(€)</th><th>Prix total(€)</th></tr>
-		<tr><td>A200</td><td>42</td><td>bleu</td><td>aucun</td><td>2</td><td><img class="btntab" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ambox_emblem_minus.svg/200px-Ambox_emblem_minus.svg.png" alt="moins" > <img class="btntab" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Ambox_emblem_plus.svg/2000px-Ambox_emblem_plus.svg.png" alt="plus" ></td><td><img class="btntab" src="gfx/corbeille.png" alt=corb"></td><td> 25.00</td><td>50.00</td></tr>
-		<tr><td>A200</td><td>42</td><td>bleu</td><td>aucun</td><td>2</td><td><img class="btntab" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ambox_emblem_minus.svg/200px-Ambox_emblem_minus.svg.png" alt="moins" > <img class="btntab" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Ambox_emblem_plus.svg/2000px-Ambox_emblem_plus.svg.png" alt="plus" ></td><td><img class="btntab" src="gfx/corbeille.png" alt=corb"></td><td> 25.00</td><td>50.00</td></tr>
+
+		
+	<table class="tabarticle" ng-controller="getElementPanierCtrl">
+		<tr><th>Modèle</th>
+		<th>Pointure</th>
+		<th>Couleur</th>
+		<th>motif</th>
+		<th>Quantité</th>
+		<th>Ajout/Retrait</th>
+		<th>Supression</th>
+		<th> Prix individuel(€)</th>
+		<th>Prix total(€)</th></tr>
+		<tr ng-repeat="article in panier track by $index " >
+		<td>{{article.nomModele}}</td>
+		<td>{{article.taille}}</td>
+		<td>{{article.couleur}}</td>
+		<td>aucun</td>
+		<td>{{article.quantite}}</td>
+		<td><img class="btntab" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ambox_emblem_minus.svg/200px-Ambox_emblem_minus.svg.png" alt="moins" > <img class="btntab" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Ambox_emblem_plus.svg/2000px-Ambox_emblem_plus.svg.png" alt="plus" ></td>
+		<td><img class="btntab" src="gfx/corbeille.png" alt=corb"></td>
+		<td> {{article.prix}}</td>
+		<td>50.00</td>
+		</tr>
+		
 	</table>
+
+ <!--  <table class="tabarticle" ng-controller="getElementPanierCtrl" >
+		<tr><th>Modèle</th></tr>
+		<tr ng-repeat="article in panier.articles"><td>{{article}}</td></tr>
+	</table>-->
 	<div class="btncontainer">
 		
 		<div class="btnlign">
@@ -12,11 +37,12 @@
 			
 			<p>Vider le panier</p>
 		</div>
-		<div class="btnlign">
+		<div class="btnlign" >
 			<img class="button" src="gfx/valider.png" alt="ok">	
-			<p>Passer commande</p>
-		</div>
-	</div>
+			<p>Passer commande </p>
+		</div> 
 	
-		
+	
+	</div>
+
 </div>
