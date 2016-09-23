@@ -5,15 +5,15 @@
 	<div class="productOptions" id="navLeftDesc" >
 	<h3>Votre choix :</h3>
 	<div>
-		<!--  <label for="size">Taille:</label>-->  <label for="size">Article Disponible:</label>
+		<!--  <label for="size">Taille:</label>-->  <label for="size">Tailles disponibles :</label>
 		<select name="size" ng-model="tailleS" ng-options="article.taille for article in modele.articles | unique:'taille'">
 
 		</select> 
 	</div>
 		
 		  <div id="colorChooser">
-			<label for="colors">Couleur:</label>
-		 	<select name="colors" ng-options="article.couleur for "></select> 
+			<label for="colors">Couleurs disponibles:</label>
+		 	<select ng-disabled="!tailleS" name="colors" ng-model="colors" ng-options="article.couleur for article in modele.articles | filter: {taille: tailleS.taille}"></select> 
 		</div>
 		
 		<div id="addCart">
