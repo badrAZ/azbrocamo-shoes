@@ -5,10 +5,10 @@
 	<div class="productOptions" id="navLeftDesc" >
 	<h3>Votre choix :</h3>
 	<div>
-		<label for="size">Taille:</label>
-		<select name="size">
-			  <option>36</option>
-			  <option>36.5</option>
+		<!--  <label for="size">Taille:</label>-->  <label for="size">Article Disponible:</label>
+		<select name="size" ng-model="tailleS">
+			  <option ng-repeat="article in modele.articles " value="{{article.couleur}}">{{ article.taille }} </option> 
+			  <!-- <option>36.5</option>
 			  <option>37</option>
 			  <option>37.5</option>
 			  <option>38</option>
@@ -27,18 +27,19 @@
 			  <option>44.5</option>
 			  <option>45</option>
 			  <option>45.5</option>
-			  <option>46</option>
+			  <option>46</option> -->
 		</select> 
 	</div>
 		
-		<div id="colorChooser">
+		  <div id="colorChooser">
 			<label for="colors">Couleur:</label>
 		 	<select name="colors">
-			  <option value="Bleu" style="background-color: lightblue">Bleu</option>
+		 	<option> {{tailleS}}</option>
+		 	<!--  <option value="Bleu" style="background-color: lightblue">Bleu</option>
 			  <option value="Orange" style="background-color: orange">Orange</option>
 			  <option value="Vert" style="background-color: lightgreen">Vert</option>
 			  <option value="Marron" style="background-color: brown; color: white">Marron</option>
-			  <option value="Noir" style="background-color: black; color: white">Noir</option>
+			  <option value="Noir" style="background-color: black; color: white">Noir</option>-->
 			</select> 
 		</div>
 		

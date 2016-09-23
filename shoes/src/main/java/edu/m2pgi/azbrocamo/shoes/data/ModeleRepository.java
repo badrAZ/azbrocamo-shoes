@@ -1,6 +1,7 @@
 package edu.m2pgi.azbrocamo.shoes.data;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -12,6 +13,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+import edu.m2pgi.azbrocamo.shoes.model.Article;
 import edu.m2pgi.azbrocamo.shoes.model.Categorie;
 import edu.m2pgi.azbrocamo.shoes.model.Modele;
 
@@ -33,6 +35,10 @@ public class ModeleRepository {
 	        // criteria.select(modele).orderBy(cb.asc(modele.get(modele_.name)));
 	        criteria.select(modele).orderBy(cb.asc(modele.get("nomModele")));
 	        return em.createQuery(criteria).getResultList();
+	    }
+	    public Set<Article> findModeleArticles(String nomModele){
+	    	 Modele mod = em.find(Modele.class, nomModele);
+			  return (Set<Article>) mod.getArticles();
 	    }
 	    /*public List<Modele> findModelesCategorie(String nomCategorie){
 	    	

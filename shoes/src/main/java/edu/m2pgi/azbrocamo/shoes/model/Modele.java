@@ -38,6 +38,11 @@ public class Modele implements Serializable {
 	@JsonManagedReference
 	private List<Categorie> categories=new ArrayList<Categorie>();
 
+	@OneToMany(mappedBy="modele",fetch = FetchType.EAGER)
+	@JsonManagedReference
+	private Set<Article> articles=new HashSet<Article>();
+	
+	
 	public Modele() {
 		super();
 	}   
@@ -89,10 +94,15 @@ public class Modele implements Serializable {
 	 	        if (!categorie.getModeles().contains(this)) {
 	 	        	categorie.getModeles().add(this);
 	 	        }
-	    	
-	       
 	    }
-   
+	    public Set<Article> getArticles() {
+	        return articles;
+	    }
+	    public void addArticle(Article article){
+	    	 if (!getArticles().contains(article)) {
+	    		 getArticles().add(article);
+	 	        }
+	    }
 }
 /*@ManyToOne(fetch=FetchType.LAZY)
 @JoinColumn(name="nomCategorie")

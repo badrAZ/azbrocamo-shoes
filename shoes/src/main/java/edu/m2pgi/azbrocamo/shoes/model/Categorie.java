@@ -32,7 +32,7 @@ public class Categorie implements Serializable {
 		joinColumns=@JoinColumn(name="nomCategorie"),
 		inverseJoinColumns=@JoinColumn(name="nomModele"))
 	@JsonBackReference
-	private List<Modele> modeles=new ArrayList<Modele>();
+	private Set<Modele> modeles=new HashSet<Modele>();
 	    
 	
 	private static final long serialVersionUID = 1L;	
@@ -59,8 +59,9 @@ public class Categorie implements Serializable {
 	        
 	    }
 
-	    public Collection<Modele> getModeles() {
+	    public Set<Modele> getModeles() {
 	        return modeles;
+	       
 	    }
    
 }

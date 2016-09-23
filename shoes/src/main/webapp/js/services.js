@@ -21,6 +21,6 @@ angular.module('modelesService', ['ngResource'])
 	})
 	.factory('Modele', function($resource){
 		return $resource('rest/modeles/:nomModele', {nomModele: '@id'});
-	}).factory('ModelesCategorie', function($resource){
-		return $resource('rest/modelesCategorie/:nomCategorie', {nomCategorie: '@id'});
+	}).factory('Categories', function($resource){
+		return $resource('rest/categories/:nomCategorie', {nomCategorie: '@id'}); //,{'query':{method : 'GET'}}
 	});
