@@ -1,14 +1,12 @@
-<div class='panier' >
+<div class='panier' ng-controller="getElementPanierCtrl">
 	<h2 class="pagename"> Mon Panier </h2>
 
 		
-	<table class="tabarticle" ng-controller="getElementPanierCtrl">
+	<table class="tabarticle" >
 		<tr><th>Modèle</th>
 		<th>Pointure</th>
 		<th>Couleur</th>
-		<th>motif</th>
 		<th>Quantité</th>
-		<th>Ajout/Retrait</th>
 		<th>Supression</th>
 		<th> Prix individuel(€)</th>
 		<th>Prix total(€)</th></tr>
@@ -16,12 +14,19 @@
 		<td>{{article.nomModele}}</td>
 		<td>{{article.taille}}</td>
 		<td>{{article.couleur}}</td>
-		<td>aucun</td>
 		<td>{{article.quantite}}</td>
-		<td><img class="btntab" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ambox_emblem_minus.svg/200px-Ambox_emblem_minus.svg.png" alt="moins" > <img class="btntab" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Ambox_emblem_plus.svg/2000px-Ambox_emblem_plus.svg.png" alt="plus" ></td>
-		<td><img class="btntab" src="gfx/corbeille.png" alt=corb"></td>
+		<td><a href ng:click="removeItem($index)"><img class="btntab" src="gfx/corbeille.png" alt=corb"></td></a>
 		<td> {{article.prix}}</td>
-		<td>50.00</td>
+		<td>{{ article.quantite*article.prix  | number:2}} €</td>
+		</tr>
+		<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Total :</td>
+		<td>{{total()  | number:2}} €</td>
 		</tr>
 		
 	</table>
@@ -33,7 +38,7 @@
 	<div class="btncontainer">
 		
 		<div class="btnlign">
-			<img class="button" src="gfx/corbeille.png" alt=corb">
+			<a href  ng:click="removeAllItems()"><img class="button" src="gfx/corbeille.png" alt=corb"></a>
 			
 			<p>Vider le panier</p>
 		</div>

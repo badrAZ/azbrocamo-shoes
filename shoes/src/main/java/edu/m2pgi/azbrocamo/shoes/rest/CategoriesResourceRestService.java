@@ -28,7 +28,7 @@ public class CategoriesResourceRestService {
 	 
 	  @GET
 	    @Produces(MediaType.APPLICATION_JSON)
-	    public List<Categorie> listAllModeles() {
+	    public List<Categorie> listAllCategories() {
 	        return repository.findAllOrderedByName();
 	    }
 	  

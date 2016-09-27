@@ -49,6 +49,9 @@ angular.module('azbrocamo', ['ngRoute','modelesService','ngAnimate','ngAria','ng
             }).when('/cart', {
             	templateUrl : 'partials/panier.html',
             	controller : PanierCtrl
+            }).when('/admin/categorie', {
+            	templateUrl : 'partials/adminCategorie.html',
+            	controller : adminCategorieCtrl
             });
         } ])
     .factory('ajaxNonceInterceptor', function() {
@@ -249,8 +252,31 @@ angular.module('azbrocamo', ['ngRoute','modelesService','ngAnimate','ngAria','ng
 			};
 			$scope.panier.push($scope.newArticle);
 		}
-	
 		 localStorage.setItem('articles', JSON.stringify($scope.panier));
+		$scope.removeItem=function(index){
+			$scope.panier.splice(index,1);
+			 localStorage.setItem('articles', JSON.stringify($scope.panier));
+		}
+		$scope.removeAllItems=function(){
+			for(var i=$scope.panier.length-1;i>=0;i--){
+				 if (!$scope.panier[i].value) {
+				        $scope.panier.splice(i, 1);
+				    }
+			}
+			localStorage.setItem('articles', JSON.stringify($scope.panier));
+		}
+		 $scope.total=function(){
+			 var total=0;
+		
+			 angular.forEach($scope.panier,function(item){
+				 
+				 if(item != null){
+					 if(item.prix != null && item.quantite != null) total += item.prix * item.quantite;
+				 }
+				
+			 })
+			 return total;
+		 }
 			/*$scope.panier.push({
 				  nomModele:sharedPropertiesService.getValue(4),
 					prix:sharedPropertiesService.getValue(5),
