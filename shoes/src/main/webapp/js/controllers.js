@@ -125,14 +125,14 @@ function PanierCtrl($scope){
 		console.log($scope.quantity);
 	}
 }
-function adminCategorieCtrl($scope,Categories){
+function adminCategorieCtrl($scope,Categorie){
 	 $scope.newCategorie = {nomCategorie:""};
-	 $scope.categories=Categories.query();
+	 $scope.categories=Categorie.query();
 	 $scope.refresh=function(){
-		 $scope.categories=Categories.query();
+		 $scope.categories=Categorie.query();
 	 }
 	$scope.registerCategorie=function(){
-		Categories.save( $scope.newCategorie,function(data){
+		Categorie.save( $scope.newCategorie,function(data){
 			$scope.refresh();
 		});
 	}
