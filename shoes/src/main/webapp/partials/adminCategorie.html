@@ -7,6 +7,6 @@
 </fieldset>
 <table>
 	<tr ng-repeat="categorie in categories | orderBy:nomCategorie">
-		<td>{{categorie.nomCategorie}}</td>	<td><button ng-click="remove($index)">X</button></td>
+		<td>{{categorie.nomCategorie}}</td>	<td><button ng-click="remove(categorie.nomCategorie)">X</button></td>
 	</tr>
 </table>

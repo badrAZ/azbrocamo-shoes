@@ -137,6 +137,7 @@ function adminCategorieCtrl($scope,Categories){
 		});
 	}
 	$scope.remove=function(){
+	
 	}
 	
 }
