@@ -24,5 +24,19 @@ angular.module('modelesService', ['ngResource'])
 	}).factory('Categories', function($resource){
 		return $resource('rest/categories/:nomCategorie', {nomCategorie: '@id'}); //,{'query':{method : 'GET'}}
 	}).factory('Categorie', function($resource){
-		return $resource('rest/admin/categorie');
-	});
+		return $resource('rest/admin/categorie/');
+	}).factory('CategorieId', function($resource){
+		return $resource('rest/admin/categorie/:nomCategorie', {nomCategorie: '@id'}, {
+			delete:{method: 'DELETE', params: {nomCategorie: '@id'}}
+		})
+	}).factory('ModeleAdmin', function($resource){
+		return $resource('rest/admin/modele/');
+	}).factory('ModeleId', function($resource){
+		return $resource('rest/admin/modele/:nomModele', {nomModele: '@id'}, {
+			delete:{method: 'DELETE', params: {nomModele: '@id'}}
+		})
+	})/*.factory('ModeleAddCat', function($resource){
+		return $resource('rest/admin/modele/:nomModele/:listCat', {nomModele: '@id',listCat :'@listCat'}, {
+			update:{method: 'PUT', params: {nomModele: '@id',listCat :'@listCat'}}
+		})
+	})*/;

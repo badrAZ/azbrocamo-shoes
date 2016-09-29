@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Entity implementation class for Entity: Article
@@ -26,7 +27,7 @@ public class Article implements Serializable {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	  @JoinColumn(name="nomModele")
-	@JsonBackReference
+	@JsonIgnore
 	Modele modele;
 	private static final long serialVersionUID = 1L;
 

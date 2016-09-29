@@ -52,7 +52,16 @@ angular.module('azbrocamo', ['ngRoute','modelesService','ngAnimate','ngAria','ng
             }).when('/admin/categorie', {
             	templateUrl : 'partials/adminCategorie.html',
             	controller : adminCategorieCtrl
-            });
+            }).when('/admin/categorie/:nomCategorie', {
+            	templateUrl : 'partials/adminCategorie.html',
+            	controller : adminCategorieCtrl
+            }).when('/admin/modele', {
+            	templateUrl : 'partials/adminModele.html',
+            	controller : adminModeleCtrl
+            })/*.when('/admin/modele/:nomModele/:listCat', {
+            	templateUrl : 'partials/adminModele.html',
+            	controller : adminModeleCtrl
+            })*/;
         } ])
     .factory('ajaxNonceInterceptor', function() {
         // This interceptor is equivalent to the behavior induced by $.ajaxSetup({cache:false});

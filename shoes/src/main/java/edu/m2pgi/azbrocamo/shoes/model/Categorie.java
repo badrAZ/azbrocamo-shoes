@@ -12,6 +12,7 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Entity implementation class for Entity: Categorie
@@ -31,7 +32,7 @@ public class Categorie implements Serializable {
 	@JoinTable(name="CAT_MOD", 
 		joinColumns=@JoinColumn(name="nomCategorie"),
 		inverseJoinColumns=@JoinColumn(name="nomModele"))
-	@JsonBackReference
+	@JsonIgnore
 	private Set<Modele> modeles=new HashSet<Modele>();
 	    
 	

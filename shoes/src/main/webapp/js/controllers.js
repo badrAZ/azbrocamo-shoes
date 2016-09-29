@@ -125,19 +125,70 @@ function PanierCtrl($scope){
 		console.log($scope.quantity);
 	}
 }
-function adminCategorieCtrl($scope,Categorie){
+function adminCategorieCtrl($scope,Categorie,CategorieId){
+	 $scope.reset = function() {
+	            $scope.addCat.$setPristine();
+	            $scope.newCategorie = {nomCategorie:""};
+	 }
+	 
+	 
 	 $scope.newCategorie = {nomCategorie:""};
+	 
+	 
 	 $scope.categories=Categorie.query();
+	 
+	 
 	 $scope.refresh=function(){
 		 $scope.categories=Categorie.query();
 	 }
+	 
+	 
 	$scope.registerCategorie=function(){
+		
 		Categorie.save( $scope.newCategorie,function(data){
 			$scope.refresh();
+			$scope.reset();
 		});
+		
+		
 	}
-	$scope.remove=function(){
+	$scope.remove=function(nomCategorie){
+		CategorieId.delete({nomCategorie:nomCategorie});
+		 $scope.categories=Categorie.query();
+		$scope.refresh();
+	}
 	
+}
+function adminModeleCtrl($scope,ModeleAdmin,ModeleId,Categorie,ModeleAddCat){
+	 $scope.reset = function() {
+	            $scope.addMod.$setPristine();
+	            $scope.newModele = {nomModele:"",note:"0",prix:"",photo:"",description:""};
+	 }
+	 
+	 
+	 $scope.newModele = {nomModele:"",note:"0",prix:"",photo:"",description:""};
+	 $scope.categories=Categorie.query();
+	 
+	 $scope.modeles=ModeleAdmin.query();
+	 
+	 
+	 $scope.refresh=function(){
+		 $scope.modeles=ModeleAdmin.query();
+	 }
+	 
+	 
+	$scope.registerModele=function(selectedCategories){
+		
+		ModeleAdmin.save( $scope.newModele,function(data){
+			$scope.refresh();
+			$scope.reset();
+		});
+		//ModeleAddCat.update($scope.newModele.nomModele,angular.fromJson(selectedCategories));
+	}
+	$scope.remove=function(nomModele){
+		ModeleId.delete({nomModele:nomModele});
+		 $scope.modeles=ModeleAdmin.query();
+		$scope.refresh();
 	}
 	
 }

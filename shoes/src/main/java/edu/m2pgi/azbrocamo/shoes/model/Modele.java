@@ -12,6 +12,7 @@ import java.util.Set;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /**
@@ -35,11 +36,11 @@ public class Modele implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@ManyToMany(mappedBy="modeles", cascade=CascadeType.PERSIST,fetch = FetchType.EAGER)
-	@JsonManagedReference
+	@JsonIgnore
 	private List<Categorie> categories=new ArrayList<Categorie>();
 
 	@OneToMany(mappedBy="modele",fetch = FetchType.EAGER)
-	@JsonManagedReference
+	@JsonIgnore
 	private Set<Article> articles=new HashSet<Article>();
 	
 	
