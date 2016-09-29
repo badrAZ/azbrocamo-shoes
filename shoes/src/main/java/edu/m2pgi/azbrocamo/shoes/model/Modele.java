@@ -36,11 +36,11 @@ public class Modele implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@ManyToMany(mappedBy="modeles", cascade=CascadeType.PERSIST,fetch = FetchType.EAGER)
-	@JsonIgnore
+	 @JsonManagedReference
 	private List<Categorie> categories=new ArrayList<Categorie>();
 
 	@OneToMany(mappedBy="modele",fetch = FetchType.EAGER)
-	@JsonIgnore
+	 @JsonManagedReference
 	private Set<Article> articles=new HashSet<Article>();
 	
 	

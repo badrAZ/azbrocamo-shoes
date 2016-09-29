@@ -32,7 +32,7 @@ public class Categorie implements Serializable {
 	@JoinTable(name="CAT_MOD", 
 		joinColumns=@JoinColumn(name="nomCategorie"),
 		inverseJoinColumns=@JoinColumn(name="nomModele"))
-	@JsonIgnore
+	@JsonBackReference 
 	private Set<Modele> modeles=new HashSet<Modele>();
 	    
 	

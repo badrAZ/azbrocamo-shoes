@@ -159,7 +159,7 @@ function adminCategorieCtrl($scope,Categorie,CategorieId){
 	}
 	
 }
-function adminModeleCtrl($scope,ModeleAdmin,ModeleId,Categorie,ModeleAddCat){
+function adminModeleCtrl($scope,ModeleAdmin,ModeleId){/*,Categorie,ModeleAddCat*/
 	 $scope.reset = function() {
 	            $scope.addMod.$setPristine();
 	            $scope.newModele = {nomModele:"",note:"0",prix:"",photo:"",description:""};
@@ -167,7 +167,7 @@ function adminModeleCtrl($scope,ModeleAdmin,ModeleId,Categorie,ModeleAddCat){
 	 
 	 
 	 $scope.newModele = {nomModele:"",note:"0",prix:"",photo:"",description:""};
-	 $scope.categories=Categorie.query();
+	 /*$scope.categories=Categorie.query();*/
 	 
 	 $scope.modeles=ModeleAdmin.query();
 	 
@@ -177,7 +177,7 @@ function adminModeleCtrl($scope,ModeleAdmin,ModeleId,Categorie,ModeleAddCat){
 	 }
 	 
 	 
-	$scope.registerModele=function(selectedCategories){
+	$scope.registerModele=function(){
 		
 		ModeleAdmin.save( $scope.newModele,function(data){
 			$scope.refresh();

@@ -1,11 +1,11 @@
  <fieldset> 
- <form name="addMod" ng-submit="registerModele(selectedCategories)">
+ <form name="addMod" ng-submit="registerModele()">
  	<legend>Modele</legend>
 	<label>Nom</label><input type="text" ng-model="newModele.nomModele" required autofocus/>
 	<label>Prix</label><input type="number" step="0.01"  ng-model="newModele.prix" required/>
 	<label>Description</label><TEXTAREA rows="4" cols="50" ng-model="newModele.description" required></TEXTAREA>
 	<label>Photo</label><input type="text" ng-model="newModele.photo" required/>
-	<label>Categories</label><select multiple  ng-model="selectedCategories"><option ng-repeat="categorie in categories | orderBy:nomCategorie" > {{categorie.nomCategorie}}</option></select>
+	<!--  <label>Categories</label><select multiple  ng-model="selectedCategories"><option ng-repeat="categorie in categories | orderBy:nomCategorie" > {{categorie.nomCategorie}}</option></select>-->
 	<input type="submit" value="enregistrer"/>
 	</form>
 </fieldset>

@@ -27,7 +27,7 @@ public class Article implements Serializable {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	  @JoinColumn(name="nomModele")
-	@JsonIgnore
+	@JsonBackReference
 	Modele modele;
 	private static final long serialVersionUID = 1L;
 
